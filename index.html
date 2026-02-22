@@ -33,7 +33,7 @@
   <!-- ═══════════════════════════ GLOBAL NAV ═══════════════════════════ -->
   <header class="site-header" role="banner">
     <a href="index.html" class="logo-mark" aria-label="TJ Marek Home">
-      <img src="assets/logo.png" alt="TJ Marek logo" width="48" height="48" />
+      <img src="assets/logo.svg" alt="TJ Marek logo" width="48" height="48" />
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span class="hamburger-line"></span>
@@ -55,6 +55,15 @@
   <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
   <main id="main-content">
     <section class="hero" aria-label="Hero introduction">
+
+      <!-- Subtle background: gradient pulse + dust dots -->
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="hero-dust" aria-hidden="true">
+        <span class="dust-dot dust-dot--1"></span>
+        <span class="dust-dot dust-dot--2"></span>
+        <span class="dust-dot dust-dot--3"></span>
+      </div>
+
       <div class="hero__grid">
 
         <div class="hero__content">
@@ -82,29 +91,21 @@
         </div>
 
         <div class="hero__image-wrap" aria-hidden="true">
-          <div class="hero__image-bg"></div>
           <img
-            src="assets/headshot.webp"
+            src="assets/headshot.png"
             alt="TJ Marek — Digital Marketing Strategist"
             class="hero__headshot"
             width="520"
-            height="620"
+            height="680"
             fetchpriority="high"
           />
           <div class="hero__stat hero__stat--1">
             <span class="stat-value">5+</span>
             <span class="stat-label">Years Experience</span>
           </div>
-          <div class="hero__stat hero__stat--2">
-            <span class="stat-value">4+</span>
-            <span class="stat-label">Years at Current Role</span>
-          </div>
         </div>
 
       </div>
-
-      <!-- Scroll hint removed — no below-fold content on home -->
-      <div class="hero__bg-text" aria-hidden="true">GROWTH</div>
     </section>
   </main>
 
@@ -133,4 +134,3 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-
