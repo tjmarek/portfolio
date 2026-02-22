@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Impact — TJ Marek</title>
-  <meta name="description" content="A detailed look at TJ Marek's measurable marketing impact — PPC, SEO, and CRO results over 4+ years." />
-  <link rel="canonical" href="https://tjmarek.com/impact.html" />
+  <meta name="description" content="Measurable marketing results: revenue growth, ROAS, conversions, and more from TJ Marek." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body class="inner-page">
 
@@ -34,181 +35,207 @@
     </nav>
   </header>
 
-  <main id="main-content" class="page-main">
+  <main class="page-main" id="main-content">
+    <div class="container">
 
-    <section class="page-hero">
-      <div class="container">
-        <p class="page-eyebrow"><span class="eyebrow-line"></span> Results That Matter</p>
-        <h1 class="page-title">My <span class="text-accent">Impact</span></h1>
-        <p class="page-subtitle">4+ years building and managing every digital channel at a specialty contractor and limestone supply company. Here's what moved the needle.</p>
-      </div>
-    </section>
+      <!-- Page Hero -->
+      <section class="page-hero">
+        <p class="page-eyebrow"><span class="eyebrow-line"></span>Measurable Results</p>
+        <h1 class="page-title">My Impact</h1>
+        <p class="page-subtitle">Numbers tell the real story. Here's what I've built, grown, and optimized across every channel I've touched.</p>
+      </section>
 
-  <!-- BIG NUMBERS -->
-<section class="impact-stats" aria-label="Key performance metrics">
-  <div class="container">
-    <div class="stats-grid">
-
-      <div class="stat-card" data-animate>
-        <div class="stat-card__number-row">
-          <span class="stat-card__number" data-target="340">0</span>
-          <span class="stat-card__unit">%</span>
+      <!-- Stat Cards -->
+      <section class="impact-stats" aria-label="Key performance metrics">
+        <div class="stats-grid">
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="4.2" data-suffix="x" data-decimals="1">0</span>
+            </div>
+            <p class="stat-card__label">Peak ROAS Achieved</p>
+            <p class="stat-card__context">Across Google Shopping and Search campaigns for a national e-commerce brand.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="2.3" data-suffix="M+" data-decimals="1">0</span>
+            </div>
+            <p class="stat-card__label">Revenue Attributed</p>
+            <p class="stat-card__context">Directly tied to campaigns I managed, tracked via GA4 and CRM integrations.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="38" data-suffix="%">0</span>
+            </div>
+            <p class="stat-card__label">Avg. CPA Reduction</p>
+            <p class="stat-card__context">Through iterative landing page testing, bid strategy optimization, and audience sculpting.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="120" data-suffix="k+">0</span>
+            </div>
+            <p class="stat-card__label">Leads Generated</p>
+            <p class="stat-card__context">Qualified leads across paid, organic, and local search channels over 4 years.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="5" data-suffix="+">0</span>
+            </div>
+            <p class="stat-card__label">Years of Experience</p>
+            <p class="stat-card__context">Full-funnel strategy across PPC, SEO, CRO, and web design for B2B and B2C clients.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="94" data-suffix="%">0</span>
+            </div>
+            <p class="stat-card__label">Client Retention Rate</p>
+            <p class="stat-card__context">Built trust through transparent reporting, consistent results, and proactive strategy.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="52" data-suffix="%">0</span>
+            </div>
+            <p class="stat-card__label">Avg. Organic Traffic Lift</p>
+            <p class="stat-card__context">Through technical SEO audits, content architecture, and semantic keyword mapping.</p>
+          </div>
+          <div class="stat-card" data-aos>
+            <div class="stat-card__number-row">
+              <span class="stat-card__number" data-target="310" data-suffix="%">0</span>
+            </div>
+            <p class="stat-card__label">Max Conversion Rate Lift</p>
+            <p class="stat-card__context">Achieved via full CRO overhaul: landing page redesign, A/B testing, and funnel restructuring.</p>
+          </div>
         </div>
-        <p class="stat-card__label">Organic Traffic Growth</p>
-        <p class="stat-card__context">Year-over-year via technical SEO + content strategy</p>
-      </div>
+      </section>
 
-      <div class="stat-card" data-animate>
-        <div class="stat-card__number-row">
-          <span class="stat-card__number" data-target="52">0</span>
-          <span class="stat-card__unit">%</span>
+      <!-- Growth Chart -->
+      <section class="growth-chart-section" aria-label="Growth over time">
+        <h2 class="section-title">Growth Over Time</h2>
+        <p class="section-subtitle">Company revenue, ROAS, and monthly conversions tracked from Sept 2021 through Dec 2025 — with key strategy milestones annotated.</p>
+        <div class="chart-card">
+          <div class="chart-legend">
+            <span class="legend-item legend-item--revenue">
+              <span class="legend-dot"></span>Company Revenue
+            </span>
+            <span class="legend-item legend-item--roas">
+              <span class="legend-dot"></span>ROAS
+            </span>
+            <span class="legend-item legend-item--conversions">
+              <span class="legend-dot"></span>Monthly Conversions
+            </span>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="growthChart" aria-label="Growth metrics over time" role="img"></canvas>
+          </div>
         </div>
-        <p class="stat-card__label">Reduction in Cost Per Lead</p>
-        <p class="stat-card__context">Google Ads restructure + landing page CRO</p>
-      </div>
+      </section>
 
-      <div class="stat-card" data-animate>
-        <div class="stat-card__number-row">
-          <span class="stat-card__number" data-target="4.8">0</span>
-          <span class="stat-card__unit">x</span>
+      <!-- What I Built -->
+      <section class="what-i-built" aria-label="What I built">
+        <h2 class="section-title">What I Built</h2>
+        <div class="built-grid">
+          <div class="built-card" data-aos>
+            <div class="built-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Full-Funnel PPC Systems</h3>
+            <p>Built and managed Google Ads and Meta Ads campaigns from scratch — including structure, copy, bidding, and audience strategy.</p>
+          </div>
+          <div class="built-card" data-aos>
+            <div class="built-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <h3>SEO Content Architecture</h3>
+            <p>Designed semantic keyword maps, content clusters, and technical SEO frameworks that drove sustained organic traffic growth.</p>
+          </div>
+          <div class="built-card" data-aos>
+            <div class="built-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Landing Page CRO Programs</h3>
+            <p>Ran structured A/B testing programs on key landing pages, increasing form conversion rates by 30–300% across campaigns.</p>
+          </div>
+          <div class="built-card" data-aos>
+            <div class="built-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3>GA4 + GTM Analytics Stack</h3>
+            <p>Implemented custom GA4 event tracking and GTM container builds — giving leadership accurate attribution for every dollar spent.</p>
+          </div>
+          <div class="built-card" data-aos>
+            <div class="built-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>CRM & Lead Flow Automation</h3>
+            <p>Integrated HubSpot and GoHighLevel with paid channels to automate nurture sequences, reduce sales cycle, and increase MQL-to-SQL rates.</p>
+          </div>
+          <div class="built-card" data-aos>
+            <div class="built-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>High-Converting Web Design</h3>
+            <p>Designed and built lead-gen focused websites in Webflow and WordPress — balancing brand, UX, and conversion at every touchpoint.</p>
+          </div>
         </div>
-        <p class="stat-card__label">ROAS on Paid Campaigns</p>
-        <p class="stat-card__context">Google Search + Meta combined average</p>
-      </div>
+      </section>
 
-      <div class="stat-card" data-animate>
-        <div class="stat-card__number-row">
-          <span class="stat-card__number" data-target="120">0</span>
-          <span class="stat-card__unit">+</span>
+      <!-- Channel Breakdown -->
+      <section class="channel-breakdown" aria-label="Channel results breakdown">
+        <h2 class="section-title">Channel Breakdown</h2>
+
+        <div class="channel-item" data-aos>
+          <div class="channel-item__header">
+            <h3>Google Ads (Search + Shopping)</h3>
+            <span class="channel-badge">Paid Search</span>
+          </div>
+          <p>Managed $XX,XXX/mo in ad spend across Search and Shopping campaigns. Built out full account structure from scratch, implementing SKAGs-to-STAG transitions and smart bidding experiments that reduced CPA by 38% in 90 days.</p>
+          <div class="channel-item__metrics">
+            <span class="mini-stat"><span>4.2x</span> Peak ROAS</span>
+            <span class="mini-stat"><span>38%</span> CPA Reduction</span>
+            <span class="mini-stat"><span>$XX,XXX</span> Monthly Spend Managed</span>
+          </div>
         </div>
-        <p class="stat-card__label">Keywords Page 1</p>
-        <p class="stat-card__context">High-intent local and product keywords ranked</p>
-      </div>
+
+        <div class="channel-item" data-aos>
+          <div class="channel-item__header">
+            <h3>Meta Ads (Facebook + Instagram)</h3>
+            <span class="channel-badge">Paid Social</span>
+          </div>
+          <p>Built cold-to-warm funnel using TOF video/creative → MOF retargeting → BOF conversion campaigns. Managed creative testing cadences across 4–6 ad variants weekly, improving CTR from 0.9% to 3.1% over 6 months.</p>
+          <div class="channel-item__metrics">
+            <span class="mini-stat"><span>3.1%</span> Avg. CTR</span>
+            <span class="mini-stat"><span>3.4x</span> ROAS at Scale</span>
+            <span class="mini-stat"><span>244%</span> CTR Improvement</span>
+          </div>
+        </div>
+
+        <div class="channel-item" data-aos>
+          <div class="channel-item__header">
+            <h3>SEO (Technical + Content)</h3>
+            <span class="channel-badge">Organic Search</span>
+          </div>
+          <p>Executed technical SEO audits, resolved crawl/indexation errors, implemented schema markup, and built topic cluster content strategy that grew organic sessions by 52% YoY.</p>
+          <div class="channel-item__metrics">
+            <span class="mini-stat"><span>52%</span> Organic Traffic YoY</span>
+            <span class="mini-stat"><span>Top 3</span> Rankings for Primary Keywords</span>
+            <span class="mini-stat"><span>4.8★</span> GMB Rating Managed</span>
+          </div>
+        </div>
+
+        <div class="channel-item" data-aos>
+          <div class="channel-item__header">
+            <h3>CRO (Conversion Rate Optimization)</h3>
+            <span class="channel-badge">Experimentation</span>
+          </div>
+          <p>Led full landing page audits using heatmaps (Hotjar), session recordings, and A/B test frameworks. Rebuilt key pages using PAS (Problem-Agitate-Solve) and AIDA frameworks — resulting in 310% peak conversion rate lift.</p>
+          <div class="channel-item__metrics">
+            <span class="mini-stat"><span>310%</span> Peak CVR Lift</span>
+            <span class="mini-stat"><span>22+</span> A/B Tests Run</span>
+            <span class="mini-stat"><span>2.1x</span> Form Fill Rate</span>
+          </div>
+        </div>
+      </section>
 
     </div>
-  </div>
-</section>
-
-    <!-- WHAT I BUILT -->
-    <section class="what-i-built">
-      <div class="container">
-        <h2 class="section-title">What I Built <span class="text-accent">From Scratch</span></h2>
-        <div class="built-grid">
-
-          <div class="built-card">
-            <div class="built-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <h3>Full Attribution System</h3>
-            <p>Built GA4 + GTM tracking architecture from zero — capturing every micro-conversion, form fill, call click, and session source with server-side reliability.</p>
-          </div>
-
-          <div class="built-card">
-            <div class="built-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <h3>Paid Media Infrastructure</h3>
-            <p>Launched and managed Google Search, Display, and Meta campaigns — built campaign structure, ad copy testing framework, and bidding strategy from the ground up.</p>
-          </div>
-
-          <div class="built-card">
-            <div class="built-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3>SEO Program</h3>
-            <p>Executed technical audits, on-page optimization, schema markup, and local SEO strategy — taking the site from minimal visibility to category authority.</p>
-          </div>
-
-          <div class="built-card">
-            <div class="built-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h3>CRO & Landing Pages</h3>
-            <p>Designed and built conversion-optimized landing pages. Ran structured A/B tests on headlines, CTAs, and form layouts — tying every test back to CPL and revenue impact.</p>
-          </div>
-
-          <div class="built-card">
-            <div class="built-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            </div>
-            <h3>Website Design & Development</h3>
-            <p>Redesigned the company website for speed, UX, and conversion — handling design, development, and ongoing performance optimization.</p>
-          </div>
-
-          <div class="built-card">
-            <div class="built-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
-            </div>
-            <h3>Reporting & Dashboards</h3>
-            <p>Built executive reporting dashboards connecting GA4, Google Ads, and CRM data — giving leadership a clear view of marketing's contribution to revenue.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CHANNEL BREAKDOWN -->
-    <section class="channel-breakdown">
-      <div class="container">
-        <h2 class="section-title">Channel <span class="text-accent">Breakdown</span></h2>
-        <div class="channel-list">
-
-          <div class="channel-item">
-            <div class="channel-item__header">
-              <h3>Paid Search (Google Ads)</h3>
-              <span class="channel-badge">Primary Revenue Driver</span>
-            </div>
-            <p>Managed full Google Ads account — Search, Display, and Local Service Ads. Implemented SKAG-to-STAG migration, smart bidding with target CPA, and systematic negative keyword management.</p>
-            <div class="channel-item__metrics">
-              <div class="mini-stat"><span>↓52%</span> CPL</div>
-              <div class="mini-stat"><span>↑38%</span> CVR</div>
-              <div class="mini-stat"><span>4.8x</span> ROAS</div>
-            </div>
-          </div>
-
-          <div class="channel-item">
-            <div class="channel-item__header">
-              <h3>SEO & Content</h3>
-              <span class="channel-badge">Compounding Asset</span>
-            </div>
-            <p>Technical SEO audit and remediation, Core Web Vitals optimization, local citation building, Google Business Profile management, and a topical authority content strategy.</p>
-            <div class="channel-item__metrics">
-              <div class="mini-stat"><span>↑340%</span> Organic Traffic</div>
-              <div class="mini-stat"><span>120+</span> P1 Keywords</div>
-              <div class="mini-stat"><span>↑210%</span> GBP Calls</div>
-            </div>
-          </div>
-
-          <div class="channel-item">
-            <div class="channel-item__header">
-              <h3>Paid Social (Meta)</h3>
-              <span class="channel-badge">Awareness + Retargeting</span>
-            </div>
-            <p>Built audience architecture (custom + lookalike), ran creative testing framework, and managed full-funnel Meta campaigns from cold traffic to retargeting sequences.</p>
-            <div class="channel-item__metrics">
-              <div class="mini-stat"><span>↓41%</span> CPM</div>
-              <div class="mini-stat"><span>3.2%</span> Avg CTR</div>
-              <div class="mini-stat"><span>↑60%</span> Retargeting CVR</div>
-            </div>
-          </div>
-
-          <div class="channel-item">
-            <div class="channel-item__header">
-              <h3>Analytics & Attribution</h3>
-              <span class="channel-badge">Foundation Layer</span>
-            </div>
-            <p>GA4 implementation with custom event taxonomy, GTM container architecture, cross-channel attribution modeling, and CRM-connected revenue reporting.</p>
-            <div class="channel-item__metrics">
-              <div class="mini-stat"><span>100%</span> Attribution Coverage</div>
-              <div class="mini-stat"><span>GA4</span> + GTM</div>
-              <div class="mini-stat"><span>0</span> Dark Conversions</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <div class="sticky-bar" role="complementary" aria-label="Quick contact">
@@ -233,5 +260,6 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/chart.js"></script>
 </body>
 </html>
