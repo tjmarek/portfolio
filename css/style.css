@@ -521,7 +521,7 @@ body.home-page { overflow: hidden; }
 .hero__headshot {
   position: relative;
   z-index: 2;
-  height: calc(100% - 64px);
+  max-height: 90vh;         /* from 100vh to 90vh */
   width: auto;
   max-width: 100%;
   object-fit: contain;
