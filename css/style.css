@@ -322,7 +322,46 @@ h1, h2, h3, h4, h5, h6 {
 body.home-page { overflow: hidden; }
 
 /* ══════════════════════════════════════════════════
-   FALLING DUST PARTICLES
+   HERO BACKGROUND — RADIAL GLOW (bottom-right pulse)
+══════════════════════════════════════════════════ */
+.hero-bg-glow {
+  position: absolute;
+  /* Anchor the glow to the bottom-right corner */
+  bottom: -15%;
+  right: -10%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(242, 165, 59, 0.22) 0%,
+    rgba(242, 165, 59, 0.12) 30%,
+    rgba(242, 165, 59, 0.05) 60%,
+    transparent 80%
+  );
+  /* Breathe: scale and opacity pulse so it's clearly visible */
+  animation: glow-pulse 8s ease-in-out infinite;
+  will-change: transform, opacity;
+  transform-origin: bottom right;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   HERO BACKGROUND — FALLING DUST PARTICLES
 ══════════════════════════════════════════════════ */
 .hero-dust {
   position: absolute;
@@ -332,73 +371,47 @@ body.home-page { overflow: hidden; }
   overflow: hidden;
 }
 
-/* Every dust particle shares these base styles */
 .dust {
   position: absolute;
   top: -12px;
   border-radius: 50%;
-  /* Warm accent-tinted particles — visible but not harsh */
   background: radial-gradient(circle, rgba(242, 165, 59, 0.75) 0%, rgba(242, 165, 59, 0.2) 60%, transparent 100%);
   will-change: transform, opacity;
   animation: dust-fall linear infinite;
 }
 
-/* Each dot gets its own size, horizontal position, duration, and delay
-   — spread evenly across the viewport width for a natural rain effect */
-.d1  { width: 5px;  height: 5px;  left: 5%;   animation-duration: 9s;  animation-delay: 0s;    opacity: 0.7; }
-.d2  { width: 4px;  height: 4px;  left: 12%;  animation-duration: 11s; animation-delay: 1.5s;  opacity: 0.6; }
+/* Individual particle sizing, position, speed, and delay */
+.d1  { width: 5px;  height: 5px;  left: 5%;   animation-duration: 9s;  animation-delay: 0s;    opacity: 0.7;  }
+.d2  { width: 4px;  height: 4px;  left: 12%;  animation-duration: 11s; animation-delay: 1.5s;  opacity: 0.6;  }
 .d3  { width: 6px;  height: 6px;  left: 20%;  animation-duration: 8s;  animation-delay: 3s;    opacity: 0.75; }
 .d4  { width: 3px;  height: 3px;  left: 28%;  animation-duration: 13s; animation-delay: 0.8s;  opacity: 0.55; }
 .d5  { width: 5px;  height: 5px;  left: 36%;  animation-duration: 10s; animation-delay: 2.2s;  opacity: 0.65; }
-.d6  { width: 4px;  height: 4px;  left: 44%;  animation-duration: 12s; animation-delay: 4s;    opacity: 0.6; }
-.d7  { width: 6px;  height: 6px;  left: 52%;  animation-duration: 9s;  animation-delay: 1s;    opacity: 0.7; }
-.d8  { width: 3px;  height: 3px;  left: 60%;  animation-duration: 14s; animation-delay: 3.5s;  opacity: 0.5; }
+.d6  { width: 4px;  height: 4px;  left: 44%;  animation-duration: 12s; animation-delay: 4s;    opacity: 0.6;  }
+.d7  { width: 6px;  height: 6px;  left: 52%;  animation-duration: 9s;  animation-delay: 1s;    opacity: 0.7;  }
+.d8  { width: 3px;  height: 3px;  left: 60%;  animation-duration: 14s; animation-delay: 3.5s;  opacity: 0.5;  }
 .d9  { width: 5px;  height: 5px;  left: 67%;  animation-duration: 10s; animation-delay: 0.3s;  opacity: 0.68; }
-.d10 { width: 4px;  height: 4px;  left: 74%;  animation-duration: 11s; animation-delay: 2.8s;  opacity: 0.6; }
+.d10 { width: 4px;  height: 4px;  left: 74%;  animation-duration: 11s; animation-delay: 2.8s;  opacity: 0.6;  }
 .d11 { width: 6px;  height: 6px;  left: 80%;  animation-duration: 8s;  animation-delay: 1.8s;  opacity: 0.72; }
 .d12 { width: 3px;  height: 3px;  left: 86%;  animation-duration: 13s; animation-delay: 4.5s;  opacity: 0.55; }
 .d13 { width: 5px;  height: 5px;  left: 91%;  animation-duration: 9s;  animation-delay: 0.6s;  opacity: 0.65; }
-.d14 { width: 4px;  height: 4px;  left: 16%;  animation-duration: 12s; animation-delay: 6s;    opacity: 0.6; }
-.d15 { width: 6px;  height: 6px;  left: 57%;  animation-duration: 10s; animation-delay: 5s;    opacity: 0.7; }
+.d14 { width: 4px;  height: 4px;  left: 16%;  animation-duration: 12s; animation-delay: 6s;    opacity: 0.6;  }
+.d15 { width: 6px;  height: 6px;  left: 57%;  animation-duration: 10s; animation-delay: 5s;    opacity: 0.7;  }
 
-/* Core fall animation:
-   - Starts above viewport (top: -12px via base style)
-   - Falls straight down past the bottom
-   - Fades in at the top, fades out at the bottom
-   - Slight horizontal drift for a natural, organic feel */
+/* Even dots drift right, odd dots drift left */
 @keyframes dust-fall {
-  0% {
-    transform: translateY(-20px) translateX(0px);
-    opacity: 0;
-  }
-  8% {
-    opacity: var(--opacity, 0.65);
-  }
-  90% {
-    opacity: var(--opacity, 0.65);
-  }
-  100% {
-    transform: translateY(105vh) translateX(18px);
-    opacity: 0;
-  }
+  0%   { transform: translateY(-20px) translateX(0px);  opacity: 0;    }
+  8%   { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(105vh) translateX(14px); opacity: 0;    }
 }
-
-/* Odd dots drift slightly left, even dots drift slightly right
-   for a realistic, non-uniform fall */
 .d1, .d3, .d5, .d7, .d9, .d11, .d13, .d15 {
   animation-name: dust-fall-left;
 }
 @keyframes dust-fall-left {
-  0%   { transform: translateY(-20px) translateX(0px);   opacity: 0; }
+  0%   { transform: translateY(-20px) translateX(0px);   opacity: 0;  }
   8%   { opacity: 0.65; }
   90%  { opacity: 0.65; }
-  100% { transform: translateY(105vh) translateX(-14px); opacity: 0; }
-}
-@keyframes dust-fall {
-  0%   { transform: translateY(-20px) translateX(0px);  opacity: 0; }
-  8%   { opacity: 0.6; }
-  90%  { opacity: 0.6; }
-  100% { transform: translateY(105vh) translateX(14px); opacity: 0; }
+  100% { transform: translateY(105vh) translateX(-14px); opacity: 0;  }
 }
 
 /* ══════════════════════════════════════════════════
@@ -446,7 +459,6 @@ body.home-page { overflow: hidden; }
   flex-shrink: 0;
 }
 
-/* H1 — slightly tightened to give image breathing room */
 .hero__name {
   font-family: var(--font-display);
   font-size: clamp(4rem, 9vw, 7.75rem);
@@ -525,7 +537,6 @@ body.home-page { overflow: hidden; }
     drop-shadow(0 8px 20px rgba(54, 69, 79, 0.12));
 }
 
-/* Stat card below headshot */
 .hero__stat {
   position: relative;
   z-index: 3;
@@ -962,7 +973,10 @@ body.home-page { overflow: hidden; }
   .hero__actions    { justify-content: center; }
   .hero__tags       { justify-content: center; }
 
-  /* Reduce to 6 visible particles on mobile — keeps it clean */
+  /* Scale glow down on mobile */
+  .hero-bg-glow { width: 100vw; height: 100vw; bottom: -20%; right: -20%; }
+
+  /* Reduce to 8 particles on mobile */
   .d4, .d6, .d8, .d10, .d12, .d14 { display: none; }
 
   .stats-grid   { grid-template-columns: repeat(2, 1fr); }
@@ -986,6 +1000,9 @@ body.home-page { overflow: hidden; }
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .dust, .hero__stat { animation: none; }
+  .dust,
+  .hero-bg-glow,
+  .hero__stat { animation: none; }
   .dust { opacity: 0; }
+  .hero-bg-glow { opacity: 0.4; transform: none; }
 }
