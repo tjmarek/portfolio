@@ -316,15 +316,15 @@ h1, h2, h3, h4, h5, h6 {
 .btn--full { width: 100%; }
 
 /* ══════════════════════════════════════════════════
-   HOME PAGE — HERO BACKGROUND EFFECTS
+   HOME PAGE
 ══════════════════════════════════════════════════ */
-.home-page {
-  background: var(--bg);
-}
+.home-page { background: var(--bg); }
 body.home-page { overflow: hidden; }
 
-/* Outer container — sits behind everything */
-.hero-bg-sweep {
+/* ══════════════════════════════════════════════════
+   FALLING DUST PARTICLES
+══════════════════════════════════════════════════ */
+.hero-dust {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -332,58 +332,73 @@ body.home-page { overflow: hidden; }
   overflow: hidden;
 }
 
-/* Static warm base glow */
-.hero-bg-sweep::before {
-  content: '';
+/* Every dust particle shares these base styles */
+.dust {
   position: absolute;
-  /* Oversized ellipse so it's clearly visible */
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
+  top: -12px;
   border-radius: 50%;
-  background: radial-gradient(
-    ellipse 85% 75% at 75% 65%,
-    rgba(242, 165, 59, 0.18) 0%,
-    rgba(242, 165, 59, 0.10) 30%,
-    rgba(242, 165, 59, 0.04) 60%,
-    transparent 85%
-  );
-  /* Breathe in and out — clearly visible pulse */
-  animation: glow-pulse 10s ease-in-out infinite;
-  will-change: opacity, transform;
+  /* Warm accent-tinted particles — visible but not harsh */
+  background: radial-gradient(circle, rgba(242, 165, 59, 0.75) 0%, rgba(242, 165, 59, 0.2) 60%, transparent 100%);
+  will-change: transform, opacity;
+  animation: dust-fall linear infinite;
 }
 
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.55; transform: scale(1);    }
-  50%       { opacity: 1;    transform: scale(1.06); }
+/* Each dot gets its own size, horizontal position, duration, and delay
+   — spread evenly across the viewport width for a natural rain effect */
+.d1  { width: 5px;  height: 5px;  left: 5%;   animation-duration: 9s;  animation-delay: 0s;    opacity: 0.7; }
+.d2  { width: 4px;  height: 4px;  left: 12%;  animation-duration: 11s; animation-delay: 1.5s;  opacity: 0.6; }
+.d3  { width: 6px;  height: 6px;  left: 20%;  animation-duration: 8s;  animation-delay: 3s;    opacity: 0.75; }
+.d4  { width: 3px;  height: 3px;  left: 28%;  animation-duration: 13s; animation-delay: 0.8s;  opacity: 0.55; }
+.d5  { width: 5px;  height: 5px;  left: 36%;  animation-duration: 10s; animation-delay: 2.2s;  opacity: 0.65; }
+.d6  { width: 4px;  height: 4px;  left: 44%;  animation-duration: 12s; animation-delay: 4s;    opacity: 0.6; }
+.d7  { width: 6px;  height: 6px;  left: 52%;  animation-duration: 9s;  animation-delay: 1s;    opacity: 0.7; }
+.d8  { width: 3px;  height: 3px;  left: 60%;  animation-duration: 14s; animation-delay: 3.5s;  opacity: 0.5; }
+.d9  { width: 5px;  height: 5px;  left: 67%;  animation-duration: 10s; animation-delay: 0.3s;  opacity: 0.68; }
+.d10 { width: 4px;  height: 4px;  left: 74%;  animation-duration: 11s; animation-delay: 2.8s;  opacity: 0.6; }
+.d11 { width: 6px;  height: 6px;  left: 80%;  animation-duration: 8s;  animation-delay: 1.8s;  opacity: 0.72; }
+.d12 { width: 3px;  height: 3px;  left: 86%;  animation-duration: 13s; animation-delay: 4.5s;  opacity: 0.55; }
+.d13 { width: 5px;  height: 5px;  left: 91%;  animation-duration: 9s;  animation-delay: 0.6s;  opacity: 0.65; }
+.d14 { width: 4px;  height: 4px;  left: 16%;  animation-duration: 12s; animation-delay: 6s;    opacity: 0.6; }
+.d15 { width: 6px;  height: 6px;  left: 57%;  animation-duration: 10s; animation-delay: 5s;    opacity: 0.7; }
+
+/* Core fall animation:
+   - Starts above viewport (top: -12px via base style)
+   - Falls straight down past the bottom
+   - Fades in at the top, fades out at the bottom
+   - Slight horizontal drift for a natural, organic feel */
+@keyframes dust-fall {
+  0% {
+    transform: translateY(-20px) translateX(0px);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--opacity, 0.65);
+  }
+  90% {
+    opacity: var(--opacity, 0.65);
+  }
+  100% {
+    transform: translateY(105vh) translateX(18px);
+    opacity: 0;
+  }
 }
 
-/* Sweeping diagonal shimmer bar — the clearly visible moving element */
-.hero-bg-sweep::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    125deg,
-    transparent       0%,
-    transparent       30%,
-    rgba(242, 165, 59, 0.13) 42%,
-    rgba(242, 165, 59, 0.20) 50%,
-    rgba(242, 165, 59, 0.13) 58%,
-    transparent       70%,
-    transparent       100%
-  );
-  /* Start off-screen left, sweep to off-screen right */
-  transform: translateX(-120%);
-  animation: shimmer-sweep 7s ease-in-out infinite;
-  animation-delay: 1.5s;
-  will-change: transform;
+/* Odd dots drift slightly left, even dots drift slightly right
+   for a realistic, non-uniform fall */
+.d1, .d3, .d5, .d7, .d9, .d11, .d13, .d15 {
+  animation-name: dust-fall-left;
 }
-
-@keyframes shimmer-sweep {
-  0%   { transform: translateX(-120%); }
-  100% { transform: translateX(120%);  }
+@keyframes dust-fall-left {
+  0%   { transform: translateY(-20px) translateX(0px);   opacity: 0; }
+  8%   { opacity: 0.65; }
+  90%  { opacity: 0.65; }
+  100% { transform: translateY(105vh) translateX(-14px); opacity: 0; }
+}
+@keyframes dust-fall {
+  0%   { transform: translateY(-20px) translateX(0px);  opacity: 0; }
+  8%   { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(105vh) translateX(14px); opacity: 0; }
 }
 
 /* ══════════════════════════════════════════════════
@@ -412,7 +427,6 @@ body.home-page { overflow: hidden; }
   z-index: 2;
 }
 
-/* Eyebrow */
 .hero__eyebrow {
   display: flex;
   align-items: center;
@@ -432,7 +446,7 @@ body.home-page { overflow: hidden; }
   flex-shrink: 0;
 }
 
-/* H1 — slightly tightened max so image has breathing room */
+/* H1 — slightly tightened to give image breathing room */
 .hero__name {
   font-family: var(--font-display);
   font-size: clamp(4rem, 9vw, 7.75rem);
@@ -483,7 +497,7 @@ body.home-page { overflow: hidden; }
   box-shadow: var(--shadow-md);
 }
 
-/* ── Hero Image — Frameless, Large, Centered ────── */
+/* ── Hero Image — Frameless, Large ─────────────── */
 .hero__image-wrap {
   position: relative;
   display: flex;
@@ -511,7 +525,7 @@ body.home-page { overflow: hidden; }
     drop-shadow(0 8px 20px rgba(54, 69, 79, 0.12));
 }
 
-/* Stat card — sits as flex row directly below headshot */
+/* Stat card below headshot */
 .hero__stat {
   position: relative;
   z-index: 3;
@@ -714,15 +728,9 @@ body.home-page { overflow: hidden; }
 .channel-item__header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.875rem; flex-wrap: wrap; }
 .channel-item__header h3 { font-size: 1.175rem; font-weight: 700; color: var(--text-primary); }
 .channel-badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-light);
-  border: 1px solid var(--accent-border);
-  border-radius: 999px;
-  padding: 0.2rem 0.875rem;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-light); border: 1px solid var(--accent-border);
+  border-radius: 999px; padding: 0.2rem 0.875rem;
 }
 .channel-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; max-width: 700px; }
 .channel-item__metrics { display: flex; gap: 1.5rem; flex-wrap: wrap; }
@@ -735,15 +743,9 @@ body.home-page { overflow: hidden; }
 .cs-filter-section { padding: 0 0 2.5rem; }
 .filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .filter-tab {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--text-muted);
-  background: var(--surface);
-  border: 1px solid var(--border-mid);
-  border-radius: 999px;
-  padding: 0.45rem 1.25rem;
-  box-shadow: var(--shadow-sm);
+  font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.03em;
+  color: var(--text-muted); background: var(--surface); border: 1px solid var(--border-mid);
+  border-radius: 999px; padding: 0.45rem 1.25rem; box-shadow: var(--shadow-sm);
   transition: all var(--transition);
 }
 .filter-tab:hover { color: var(--text-primary); border-color: var(--border-hover); }
@@ -752,25 +754,16 @@ body.home-page { overflow: hidden; }
 .case-studies-grid-section { padding: 0 0 5rem; }
 .cs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .cs-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 2.25rem; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column;
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .cs-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .cs-card__accent {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, var(--accent), rgba(242,165,59,0.35));
-  opacity: 0;
-  transition: opacity var(--transition);
+  opacity: 0; transition: opacity var(--transition);
 }
 .cs-card:hover .cs-card__accent { opacity: 1; }
 .cs-card__meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.125rem; }
@@ -943,16 +936,13 @@ body.home-page { overflow: hidden; }
 
   .nav-toggle { display: flex; }
   .main-nav {
-    position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: min(80vw, 320px);
-    background: var(--surface);
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(80vw, 320px); background: var(--surface);
     border-left: 1px solid var(--border-mid);
     padding: calc(var(--nav-h) + 2rem) 2rem 2rem;
     transform: translateX(100%);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-lg);
-    z-index: 999;
+    box-shadow: var(--shadow-lg); z-index: 999;
   }
   .main-nav.open { transform: translateX(0); }
   .nav-list { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
@@ -961,8 +951,7 @@ body.home-page { overflow: hidden; }
 
   body.home-page { overflow-y: auto; }
   .hero {
-    height: auto;
-    min-height: 100svh;
+    height: auto; min-height: 100svh;
     padding-top: calc(var(--nav-h) + 2rem);
     padding-bottom: calc(var(--bar-h) + 2rem);
     align-items: flex-start;
@@ -973,8 +962,8 @@ body.home-page { overflow: hidden; }
   .hero__actions    { justify-content: center; }
   .hero__tags       { justify-content: center; }
 
-  /* Keep sweep animation on mobile but tone it back slightly */
-  .hero-bg-sweep::after { animation-duration: 10s; }
+  /* Reduce to 6 visible particles on mobile — keeps it clean */
+  .d4, .d6, .d8, .d10, .d12, .d14 { display: none; }
 
   .stats-grid   { grid-template-columns: repeat(2, 1fr); }
   .built-grid   { grid-template-columns: 1fr; }
@@ -985,7 +974,6 @@ body.home-page { overflow: hidden; }
   .sticky-bar   { gap: 0.5rem; }
   .status-text  { font-size: 0.67rem; letter-spacing: 0.04em; }
   .sticky-link span { display: none; }
-
   .contact-form-wrap { padding: 1.5rem; }
 }
 
@@ -996,11 +984,8 @@ body.home-page { overflow: hidden; }
   .cs-result        { text-align: left; }
 }
 
-/* ── Reduced motion ────────────────────────────── */
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg-sweep::before,
-  .hero-bg-sweep::after,
-  .hero__stat { animation: none; }
-  .hero-bg-sweep::before { opacity: 0.6; transform: none; }
-  .hero-bg-sweep::after  { transform: none; opacity: 0.08; }
+  .dust, .hero__stat { animation: none; }
+  .dust { opacity: 0; }
 }
