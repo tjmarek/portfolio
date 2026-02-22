@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Studies — TJ Marek</title>
-  <meta name="description" content="Real campaigns. Real results. Browse TJ Marek's digital marketing case studies across PPC, SEO, CRO, and web design." />
+  <!-- UPDATE: Change title and description per case study -->
+  <title>[Case Study Title] — TJ Marek</title>
+  <meta name="description" content="[One sentence summary of the case study result.]" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,204 +35,257 @@
     </nav>
   </header>
 
-  <main class="page-main" id="main-content">
+  <main class="page-main cs-page" id="main-content">
     <div class="container">
 
-      <section class="page-hero">
-        <p class="page-eyebrow"><span class="eyebrow-line"></span>Proof of Work</p>
-        <h1 class="page-title">Case Studies</h1>
-        <p class="page-subtitle">Real campaigns. Real budgets. Real results. Every case study below is built on actual data, not estimates.</p>
-      </section>
+      <!-- ── Breadcrumb ── -->
+      <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+        <a href="case-studies.html" class="breadcrumb-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          All Case Studies
+        </a>
+      </nav>
 
-      <!-- Filter Tabs -->
-      <section class="cs-filter-section" aria-label="Filter case studies">
-        <div class="filter-tabs" role="tablist" aria-label="Case study categories">
-          <button class="filter-tab active" data-filter="all" role="tab">All</button>
-          <button class="filter-tab" data-filter="google-ads" role="tab">Google Ads</button>
-          <button class="filter-tab" data-filter="meta-ads" role="tab">Meta Ads</button>
-          <button class="filter-tab" data-filter="seo" role="tab">SEO</button>
-          <button class="filter-tab" data-filter="cro" role="tab">CRO</button>
+      <!-- ── Hero ── -->
+      <section class="cs-hero">
+        <div class="cs-hero__meta">
+          <!-- UPDATE: Replace tags with relevant channel/industry -->
+          <span class="cs-tag">Google Ads</span>
+          <span class="cs-tag">E-Commerce</span>
+          <span class="cs-tag cs-tag--date">Q3 2023 – Q1 2024</span>
+        </div>
+        <!-- UPDATE: Case study headline -->
+        <h1 class="cs-hero__title">From 1.1x to 4.2x ROAS: Rebuilding a Broken Google Shopping Account</h1>
+        <!-- UPDATE: One-liner summary -->
+        <p class="cs-hero__lead">Inherited a structurally broken Shopping account burning $12k/mo. Rebuilt the feed, restructured campaigns by margin tier, and implemented Target ROAS bidding — delivering 4.2x ROAS in 90 days.</p>
+
+        <!-- Key stat bar -->
+        <div class="cs-hero__stats">
+          <!-- UPDATE: 3–4 key outcome metrics -->
+          <div class="cs-hero__stat">
+            <span class="cs-hero__stat-value">4.2x</span>
+            <span class="cs-hero__stat-label">Final ROAS</span>
+          </div>
+          <div class="cs-hero__stat-divider" aria-hidden="true"></div>
+          <div class="cs-hero__stat">
+            <span class="cs-hero__stat-value">38%</span>
+            <span class="cs-hero__stat-label">CPA Reduction</span>
+          </div>
+          <div class="cs-hero__stat-divider" aria-hidden="true"></div>
+          <div class="cs-hero__stat">
+            <span class="cs-hero__stat-value">90</span>
+            <span class="cs-hero__stat-label">Days to Result</span>
+          </div>
+          <div class="cs-hero__stat-divider" aria-hidden="true"></div>
+          <div class="cs-hero__stat">
+            <span class="cs-hero__stat-value">$12k</span>
+            <span class="cs-hero__stat-label">Monthly Spend</span>
+          </div>
         </div>
       </section>
 
-      <!-- Case Studies Grid -->
-      <section class="case-studies-grid-section" aria-label="Case studies">
-        <div class="cs-grid">
+      <!-- ── Main Content Layout ── -->
+      <div class="cs-body">
 
-          <!-- CS 1: Google Ads #1 -->
-          <article class="cs-card" data-category="google-ads" data-aos>
-            <div class="cs-card__accent"></div>
-            <div class="cs-card__meta">
-              <span class="cs-tag">Google Ads</span>
-              <span class="cs-tag">E-Commerce</span>
-            </div>
-            <h2 class="cs-card__title">From 1.1x to 4.2x ROAS: Rebuilding a Broken Google Shopping Account</h2>
-            <p class="cs-card__summary">Inherited a Google Shopping account bleeding budget on irrelevant queries. Rebuilt the product feed, restructured campaigns by margin tier, and implemented smart bidding targets — turning a money pit into the brand's top revenue channel.</p>
-            <div class="cs-card__results">
-              <div class="cs-result">
-                <span class="cs-result__value">4.2x</span>
-                <span class="cs-result__metric">Final ROAS</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">38%</span>
-                <span class="cs-result__metric">CPA Drop</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">90</span>
-                <span class="cs-result__metric">Days to Result</span>
-              </div>
-            </div>
-            <a href="case-study.html" class="cs-card__link">
-              Read Full Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </article>
+        <!-- LEFT: Main narrative -->
+        <div class="cs-body__main">
 
-          <!-- CS 2: Google Ads #2 -->
-          <article class="cs-card" data-category="google-ads" data-aos>
-            <div class="cs-card__accent"></div>
-            <div class="cs-card__meta">
-              <span class="cs-tag">Google Ads</span>
-              <span class="cs-tag">Lead Generation</span>
-            </div>
-            <h2 class="cs-card__title">Scaling a Local Service Brand from $8k to $45k/mo in Revenue via Google Search</h2>
-            <p class="cs-card__summary">A regional HVAC company had no digital presence. Built a full Google Search strategy from keyword research through campaign build, landing page design, and call tracking — delivering consistent booked jobs at a 22% close rate.</p>
-            <div class="cs-card__results">
-              <div class="cs-result">
-                <span class="cs-result__value">462%</span>
-                <span class="cs-result__metric">Revenue Growth</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">$34</span>
-                <span class="cs-result__metric">Cost Per Lead</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">22%</span>
-                <span class="cs-result__metric">Lead-to-Close Rate</span>
-              </div>
-            </div>
-            <a href="case-study.html" class="cs-card__link">
-              Read Full Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </article>
+          <!-- The Situation -->
+          <section class="cs-section">
+            <div class="cs-section__label">01 — The Situation</div>
+            <!-- UPDATE: Describe the client's problem -->
+            <h2 class="cs-section__title">A Budget Fire with No Clear Cause</h2>
+            <p>The client came to me after 18 months of running Google Shopping internally. They were spending $12,000/month and generating roughly $13,200 in attributed revenue — a 1.1x ROAS that barely covered platform fees, let alone operating costs.</p>
+            <p>Their primary complaint: "we're spending more every month and getting less back." A two-hour audit revealed the root cause — no negative keyword list, all products lumped into a single catch-all campaign, and a Smart Shopping setup with zero feed optimization.</p>
 
-          <!-- CS 3: Meta Ads -->
-          <article class="cs-card" data-category="meta-ads" data-aos>
-            <div class="cs-card__accent"></div>
-            <div class="cs-card__meta">
-              <span class="cs-tag">Meta Ads</span>
-              <span class="cs-tag">DTC Brand</span>
-            </div>
-            <h2 class="cs-card__title">Meta Ads Cold-to-Warm Funnel That Drove 3.4x ROAS at $30k Monthly Spend</h2>
-            <p class="cs-card__summary">A direct-to-consumer brand was relying entirely on retargeting. Built a full cold-warm-hot funnel with video-first creative at the top, UGC at mid-funnel, and testimonial/offer ads at bottom — scaling from $8k to $30k/mo while maintaining ROAS.</p>
-            <div class="cs-card__results">
-              <div class="cs-result">
-                <span class="cs-result__value">3.4x</span>
-                <span class="cs-result__metric">Sustained ROAS</span>
+            <!-- Problem callout box -->
+            <div class="cs-callout cs-callout--problem">
+              <div class="cs-callout__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
               </div>
-              <div class="cs-result">
-                <span class="cs-result__value">3.1%</span>
-                <span class="cs-result__metric">Avg. CTR</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">275%</span>
-                <span class="cs-result__metric">Spend Scale</span>
+              <div>
+                <strong>The Core Problem:</strong>
+                <!-- UPDATE -->
+                <p>1 campaign, 0 negative keywords, unoptimized product feed, Smart Shopping with no conversion history = budget bleed with no data foundation to optimize from.</p>
               </div>
             </div>
-            <a href="case-study.html" class="cs-card__link">
-              Read Full Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </article>
+          </section>
 
-          <!-- CS 4: CRO #1 -->
-          <article class="cs-card" data-category="cro" data-aos>
-            <div class="cs-card__accent"></div>
-            <div class="cs-card__meta">
-              <span class="cs-tag">CRO</span>
-              <span class="cs-tag">Landing Page</span>
+          <!-- The Strategy -->
+          <section class="cs-section">
+            <div class="cs-section__label">02 — The Strategy</div>
+            <!-- UPDATE: Describe what you did -->
+            <h2 class="cs-section__title">Rebuild Before Scale</h2>
+            <p>The instinct is always to optimize what exists. But when the foundation is broken, optimization just makes you fail faster. I made the call to pause and rebuild from scratch over a 3-week period before spending another dollar.</p>
+
+            <div class="cs-strategy-steps">
+              <!-- UPDATE: Replace with your actual steps -->
+              <div class="cs-step">
+                <span class="cs-step__num">01</span>
+                <div>
+                  <h4>Product Feed Audit & Rebuild</h4>
+                  <p>Rewrote all product titles with front-loaded keywords, added GTINs, fixed attribute errors flagged in Merchant Center, and segmented by margin category.</p>
+                </div>
+              </div>
+              <div class="cs-step">
+                <span class="cs-step__num">02</span>
+                <div>
+                  <h4>Campaign Restructure by Margin Tier</h4>
+                  <p>Split products into High Margin, Mid Margin, and Clearance campaigns — each with its own ROAS target, budget, and negative keyword list seeded from 3 months of search term data.</p>
+                </div>
+              </div>
+              <div class="cs-step">
+                <span class="cs-step__num">03</span>
+                <div>
+                  <h4>Conversion Tracking Audit</h4>
+                  <p>Discovered double-counting in GTM — the purchase event was firing twice on confirmation pages due to a legacy Universal Analytics tag still active. Fixed via GTM and revalidated in GA4 DebugView.</p>
+                </div>
+              </div>
+              <div class="cs-step">
+                <span class="cs-step__num">04</span>
+                <div>
+                  <h4>Bidding Strategy Transition</h4>
+                  <p>Started on Manual CPC for 3 weeks to build clean conversion data, then transitioned to Target ROAS bidding with conservative targets — letting Google's algorithm optimize within guardrails.</p>
+                </div>
+              </div>
             </div>
+          </section>
+
+          <!-- The Results -->
+          <section class="cs-section">
+            <div class="cs-section__label">03 — The Results</div>
+            <!-- UPDATE: Results narrative -->
+            <h2 class="cs-section__title">90 Days. 4.2x ROAS.</h2>
+            <p>By week 6 the account had crossed 2.8x ROAS — already well above the prior 18 months of performance. By week 12 the High Margin campaign hit 4.2x ROAS, and the client approved a 35% budget increase into that segment.</p>
+            <p>The CPA reduction wasn't just about bidding — it was about feeding the algorithm clean data, proper attribution, and structured product groups that let it find the right buyers at the right price.</p>
+
+            <!-- Results metrics grid -->
+            <div class="cs-results-grid">
+              <!-- UPDATE: Replace with actual metrics -->
+              <div class="cs-results-metric">
+                <span class="cs-results-metric__value">4.2x</span>
+                <span class="cs-results-metric__label">Final ROAS</span>
+                <span class="cs-results-metric__change cs-results-metric__change--up">↑ from 1.1x</span>
+              </div>
+              <div class="cs-results-metric">
+                <span class="cs-results-metric__value">38%</span>
+                <span class="cs-results-metric__label">CPA Reduction</span>
+                <span class="cs-results-metric__change cs-results-metric__change--up">↓ $42 → $26</span>
+              </div>
+              <div class="cs-results-metric">
+                <span class="cs-results-metric__value">+35%</span>
+                <span class="cs-results-metric__label">Budget Increase Approved</span>
+                <span class="cs-results-metric__change cs-results-metric__change--up">Client confidence restored</span>
+              </div>
+              <div class="cs-results-metric">
+                <span class="cs-results-metric__value">0</span>
+                <span class="cs-results-metric__label">Double-Counted Conversions</span>
+                <span class="cs-results-metric__change cs-results-metric__change--up">↓ from ~30%</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Key Takeaway -->
+          <section class="cs-section">
+            <div class="cs-section__label">04 — The Takeaway</div>
+            <h2 class="cs-section__title">What This Proves</h2>
+            <!-- UPDATE: Replace with your lesson -->
+            <div class="cs-callout cs-callout--insight">
+              <div class="cs-callout__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              </div>
+              <div>
+                <strong>The Lesson:</strong>
+                <p>Most underperforming Google Ads accounts aren't a bidding problem — they're a data quality and structure problem. Fix the foundation first. Then scale.</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- RIGHT: Sidebar -->
+        <aside class="cs-body__sidebar">
+
+          <!-- Project Details -->
+          <div class="cs-sidebar-card">
+            <h3 class="cs-sidebar-card__title">Project Details</h3>
+            <ul class="cs-detail-list">
+              <li>
+                <span class="cs-detail-list__label">Channel</span>
+                <!-- UPDATE -->
+                <span class="cs-detail-list__value">Google Shopping</span>
+              </li>
+              <li>
+                <span class="cs-detail-list__label">Industry</span>
+                <!-- UPDATE -->
+                <span class="cs-detail-list__value">E-Commerce</span>
+              </li>
+              <li>
+                <span class="cs-detail-list__label">Duration</span>
+                <!-- UPDATE -->
+                <span class="cs-detail-list__value">90 Days</span>
+              </li>
+              <li>
+                <span class="cs-detail-list__label">Monthly Spend</span>
+                <!-- UPDATE -->
+                <span class="cs-detail-list__value">$12,000</span>
+              </li>
+              <li>
+                <span class="cs-detail-list__label">Tools Used</span>
+                <!-- UPDATE -->
+                <span class="cs-detail-list__value">Google Ads, Merchant Center, GA4, GTM</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tools & Stack -->
+          <div class="cs-sidebar-card">
+            <h3 class="cs-sidebar-card__title">Tech Stack</h3>
+            <div class="cs-stack-tags">
+              <!-- UPDATE: Replace with relevant tools -->
+              <span class="stack-tag">Google Ads</span>
+              <span class="stack-tag">Merchant Center</span>
+              <span class="stack-tag">GA4</span>
+              <span class="stack-tag">GTM</span>
+              <span class="stack-tag">Looker Studio</span>
+              <span class="stack-tag">DataFeedWatch</span>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="cs-sidebar-card cs-sidebar-card--cta">
+            <h3>Want results like these?</h3>
+            <p>Let's talk about your current campaigns and where the real growth is hiding.</p>
+            <a href="contact.html" class="btn btn--primary btn--full">Get In Touch</a>
+          </div>
+
+        </aside>
+      </div>
+
+      <!-- ── Other Case Studies ── -->
+      <section class="cs-more-section">
+        <h2 class="section-title">More Case Studies</h2>
+        <div class="cs-grid cs-grid--compact">
+          <article class="cs-card" data-aos>
+            <div class="cs-card__accent"></div>
+            <div class="cs-card__meta"><span class="cs-tag">CRO</span><span class="cs-tag">Landing Page</span></div>
             <h2 class="cs-card__title">310% Conversion Rate Lift: How a Landing Page Rebuild Changed Everything</h2>
-            <p class="cs-card__summary">Audited a B2B SaaS landing page with a 1.4% conversion rate. Using heatmaps, session recordings, and a full PAS framework rewrite — rebuilt the page from scratch. New CVR hit 5.7% within 45 days of launch.</p>
-            <div class="cs-card__results">
-              <div class="cs-result">
-                <span class="cs-result__value">310%</span>
-                <span class="cs-result__metric">CVR Lift</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">5.7%</span>
-                <span class="cs-result__metric">New CVR</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">45</span>
-                <span class="cs-result__metric">Days to Result</span>
-              </div>
-            </div>
+            <p class="cs-card__summary">Rebuilt a B2B SaaS landing page from 1.4% to 5.7% CVR in 45 days using heatmaps and PAS framework.</p>
             <a href="case-study.html" class="cs-card__link">
-              Read Full Case Study
+              Read Case Study
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </article>
-
-          <!-- CS 5: CRO #2 -->
-          <article class="cs-card" data-category="cro" data-aos>
+          <article class="cs-card" data-aos>
             <div class="cs-card__accent"></div>
-            <div class="cs-card__meta">
-              <span class="cs-tag">CRO</span>
-              <span class="cs-tag">E-Commerce Funnel</span>
-            </div>
-            <h2 class="cs-card__title">Reducing Cart Abandonment by 41% Through Checkout Flow Optimization</h2>
-            <p class="cs-card__summary">An e-commerce brand had a 78% cart abandonment rate. Ran a 6-week CRO sprint: simplified checkout from 5 to 2 steps, added trust signals, built exit-intent logic, and restructured the order confirmation email flow — dropping abandonment to 46%.</p>
-            <div class="cs-card__results">
-              <div class="cs-result">
-                <span class="cs-result__value">41%</span>
-                <span class="cs-result__metric">Abandonment Drop</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">2.8x</span>
-                <span class="cs-result__metric">Checkout CVR</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">$180k</span>
-                <span class="cs-result__metric">Revenue Recovered</span>
-              </div>
-            </div>
-            <a href="case-study.html" class="cs-card__link">
-              Read Full Case Study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </article>
-
-          <!-- CS 6: GMB / Local SEO -->
-          <article class="cs-card" data-category="seo" data-aos>
-            <div class="cs-card__accent"></div>
-            <div class="cs-card__meta">
-              <span class="cs-tag">Local SEO</span>
-              <span class="cs-tag">GMB</span>
-            </div>
+            <div class="cs-card__meta"><span class="cs-tag">Local SEO</span><span class="cs-tag">GMB</span></div>
             <h2 class="cs-card__title">Dominating the Local Pack: How GMB Optimization Doubled Inbound Calls</h2>
-            <p class="cs-card__summary">A multi-location service business had inconsistent NAP data, zero review strategy, and no GMB post cadence. Executed a full local SEO overhaul — citation cleanup, review generation system, Q&A seeding, and photo optimization — resulting in #1 map pack rankings for 11 of 14 target keywords.</p>
-            <div class="cs-card__results">
-              <div class="cs-result">
-                <span class="cs-result__value">2x</span>
-                <span class="cs-result__metric">Inbound Calls</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">11/14</span>
-                <span class="cs-result__metric">Map Pack Rankings</span>
-              </div>
-              <div class="cs-result">
-                <span class="cs-result__value">4.8★</span>
-                <span class="cs-result__metric">Avg. GMB Rating</span>
-              </div>
-            </div>
+            <p class="cs-card__summary">Full local SEO overhaul — citation cleanup, review strategy, and GMB optimization — landing #1 map pack for 11/14 target keywords.</p>
             <a href="case-study.html" class="cs-card__link">
-              Read Full Case Study
+              Read Case Study
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </article>
-
         </div>
       </section>
 
@@ -262,3 +316,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
