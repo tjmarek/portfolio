@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://tjmarek.com/" />
   <meta property="og:image" content="/assets/og-image.jpg" />
   <link rel="canonical" href="https://tjmarek.com/" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
@@ -56,10 +57,7 @@
   <main id="main-content">
     <section class="hero" aria-label="Hero introduction">
 
-      <!-- Pulsing bottom-right radial glow -->
-      <div class="hero-bg-glow" aria-hidden="true"></div>
-
-      <!-- Falling dust particles -->
+      <!-- Falling dust particles — 17 total (+~10%) -->
       <div class="hero-dust" aria-hidden="true">
         <span class="dust d1"></span>
         <span class="dust d2"></span>
@@ -76,10 +74,13 @@
         <span class="dust d13"></span>
         <span class="dust d14"></span>
         <span class="dust d15"></span>
+        <span class="dust d16"></span>
+        <span class="dust d17"></span>
       </div>
 
       <div class="hero__grid">
 
+        <!-- LEFT: Content -->
         <div class="hero__content">
           <p class="hero__eyebrow">
             <span class="eyebrow-line"></span>
@@ -104,18 +105,33 @@
           </div>
         </div>
 
-        <div class="hero__image-wrap" aria-hidden="true">
-          <img
-            src="assets/headshot.webp"
-            alt="TJ Marek — Digital Marketing Strategist"
-            class="hero__headshot"
-            width="520"
-            height="680"
-            fetchpriority="high"
-          />
-          <div class="hero__stat hero__stat--1">
-            <span class="stat-value">5+</span>
-            <span class="stat-label">Years Experience</span>
+        <!-- RIGHT: Headshot + Stats -->
+        <div class="hero__image-col">
+          <div class="hero__image-wrap">
+            <img
+              src="assets/headshot.webp"
+              alt="TJ Marek — Digital Marketing Strategist"
+              class="hero__headshot"
+              width="560"
+              height="720"
+              fetchpriority="high"
+            />
+          </div>
+
+          <!-- Stat strip beneath headshot -->
+          <div class="hero__stat-strip">
+            <div class="hero__mini-stat">
+              <span class="mini-stat-value" data-target="5" data-suffix="+">0</span>
+              <span class="mini-stat-label">Years Experience</span>
+            </div>
+            <div class="hero__mini-stat">
+              <span class="mini-stat-value" data-target="3.8" data-suffix="x" data-decimals="1">0</span>
+              <span class="mini-stat-label">Avg. ROAS</span>
+            </div>
+            <div class="hero__mini-stat">
+              <span class="mini-stat-value" data-target="120" data-suffix="k+">0</span>
+              <span class="mini-stat-label">Leads Generated</span>
+            </div>
           </div>
         </div>
 
@@ -144,6 +160,10 @@
       </a>
     </div>
   </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
 
   <script src="js/main.js"></script>
 </body>
