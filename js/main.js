@@ -206,3 +206,56 @@
   });
 
 })();
+
+const ctx = document.getElementById('impactChart');
+if (ctx) {
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'],
+      datasets: [
+        {
+          label: 'ROAS',
+          data: [1.1, 1.4, 1.9, 2.4, 2.8, 3.3, 3.8, 4.2],
+          borderColor: '#F2A53B',
+          backgroundColor: 'rgba(242,165,59,0.08)',
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: '#F2A53B',
+          pointRadius: 4,
+        },
+        {
+          label: 'CVR %',
+          data: [1.4, 1.8, 2.2, 2.8, 3.4, 4.1, 4.9, 5.7],
+          borderColor: '#36454f',
+          backgroundColor: 'rgba(54,69,79,0.05)',
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: '#36454f',
+          pointRadius: 4,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            font: { family: 'Inter', size: 13 },
+            color: '#36454f'
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(54,69,79,0.06)' },
+          ticks: { font: { family: 'Inter' }, color: '#8a9faa' }
+        },
+        y: {
+          grid: { color: 'rgba(54,69,79,0.06)' },
+          ticks: { font: { family: 'Inter' }, color: '#8a9faa' }
+        }
+      }
+    }
+  });
+}
