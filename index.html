@@ -9,16 +9,25 @@
   <meta property="og:title" content="TJ Marek — Digital Marketing Strategist" />
   <meta property="og:description" content="Full-funnel growth systems: PPC, SEO, CRO, and Web Design. Austin, TX." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tjmarek.com/" />
   <link rel="canonical" href="https://tjmarek.com/" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "TJ Marek",
+    "jobTitle": "Digital Marketing Strategist",
+    "url": "https://tjmarek.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Austin", "addressRegion": "TX" }
+  }
+  </script>
 </head>
 <body class="home-page">
-
-  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- ── NAV ── -->
   <header class="site-header" role="banner">
@@ -32,22 +41,24 @@
     </button>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <ul class="nav-list">
-        <li><a href="index.html"        class="nav-link active">Home</a></li>
-        <li><a href="about.html"        class="nav-link">About</a></li>
-        <li><a href="impact.html"       class="nav-link">My Impact</a></li>
-        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-        <li><a href="web-design.html"   class="nav-link">Web Design</a></li>
-        <li><a href="contact.html"      class="nav-link nav-link--cta">Let's Talk</a></li>
+        <li><a href="index.html"       class="nav-link active">Home</a></li>
+        <li><a href="impact.html"      class="nav-link">My Impact</a></li>
+        <li><a href="case-studies.html"class="nav-link">Case Studies</a></li>
+        <li><a href="web-design.html"  class="nav-link">Web Design</a></li>
+        <li><a href="about.html"       class="nav-link">About</a></li>
+        <li><a href="contact.html"     class="nav-link nav-link--cta">Let's Talk</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main-content">
 
-    <!-- ══════════════════════════════
+    <!-- ════════════════════════════════════════
          HERO
-    ══════════════════════════════ -->
+    ════════════════════════════════════════ -->
     <section class="hero" aria-label="Hero introduction">
+
+      <!-- Dust particles -->
       <div class="hero-dust" aria-hidden="true">
         <span class="dust d1"></span><span class="dust d2"></span>
         <span class="dust d3"></span><span class="dust d4"></span>
@@ -73,10 +84,10 @@
             PPC · SEO · CRO · Web Design
           </p>
           <div class="hero__actions">
-            <a href="impact.html"        class="btn btn--primary">See My Impact</a>
-            <a href="case-studies.html"  class="btn btn--ghost">Case Studies</a>
+            <a href="impact.html"       class="btn btn--primary">See My Impact</a>
+            <a href="case-studies.html" class="btn btn--ghost">Case Studies</a>
           </div>
-          <div class="hero__tags">
+          <div class="hero__tags" aria-label="Specializations">
             <span class="tag">Google Ads</span>
             <span class="tag">Meta Ads</span>
             <span class="tag">SEO</span>
@@ -86,20 +97,18 @@
           </div>
         </div>
 
-        <!-- RIGHT — position:relative container, image is position:absolute -->
-        <div class="hero__image-col" aria-hidden="true">
-          <!-- Image wrapper is absolutely positioned — NEVER in flow -->
+        <!-- RIGHT: fixed-height column prevents layout jump -->
+        <div class="hero__image-col">
           <div class="hero__image-wrap">
             <img
               src="assets/headshot.webp"
-              alt=""
+              alt="TJ Marek — Digital Marketing Strategist"
               class="hero__headshot"
               width="560" height="720"
               fetchpriority="high"
-              draggable="false"
             />
           </div>
-          <!-- Stat strip is the ONLY in-flow element — fixed height, fixed widths -->
+          <!-- Stat strip overlaps bottom of headshot -->
           <div class="hero__stat-strip">
             <div class="hero__mini-stat">
               <span class="mini-stat-value" data-target="5" data-suffix="+">5+</span>
@@ -119,51 +128,10 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════
-         HOME PREVIEW SECTIONS
-    ══════════════════════════════ -->
+    <!-- ════════════════════════════════════════
+         PAGE PREVIEW SECTIONS
+    ════════════════════════════════════════ -->
     <div class="home-sections">
-
-      <!-- ── ABOUT (first) ── -->
-      <section class="home-preview home-preview--about" aria-label="About preview">
-        <div class="container">
-          <div class="hp-grid hp-grid--right">
-
-            <div class="hp-graphic hp-graphic--about" data-aos>
-              <div class="about-preview-card">
-                <div class="apc-photo">
-                  <img src="assets/headshot.webp" alt="TJ Marek" width="180" height="220" loading="lazy" />
-                </div>
-                <div class="apc-info">
-                  <p class="apc-name">TJ Marek</p>
-                  <p class="apc-role">Full-Funnel Strategist</p>
-                  <p class="apc-location">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    Austin, TX
-                  </p>
-                  <div class="apc-chips">
-                    <span>Google Certified</span>
-                    <span>Meta Blueprint</span>
-                    <span>GA4</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="hp-content" data-aos data-aos-delay="80">
-              <p class="hp-eyebrow"><span class="eyebrow-line"></span>About Me</p>
-              <h2 class="hp-title">Data-first. Strategy-always.</h2>
-              <p class="hp-body">I'm a full-funnel digital marketing strategist based in Austin, TX. Before recommending anything, I look at the tracking infrastructure, the attribution model, and where the real friction lives in the funnel.</p>
-              <p class="hp-body">Strategy without measurement is just opinion. I don't operate that way.</p>
-              <a href="about.html" class="hp-cta">
-                Learn More About Me
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <!-- ── MY IMPACT ── -->
       <section class="home-preview home-preview--impact" aria-label="My Impact preview">
@@ -230,7 +198,7 @@
                 <div class="mini-case-card" data-aos data-aos-delay="220">
                   <span class="mcc-tag">Local SEO</span>
                   <p class="mcc-title">2x inbound calls via GMB overhaul</p>
-                  <div class="mcc-stat">2x</div>
+                  <div class="mcc-stat">11/14</div>
                 </div>
               </div>
             </div>
@@ -238,12 +206,24 @@
             <div class="hp-content" data-aos data-aos-delay="80">
               <p class="hp-eyebrow"><span class="eyebrow-line"></span>Proof of Work</p>
               <h2 class="hp-title">Real campaigns. Real budgets.</h2>
-              <p class="hp-body">Every case study is built on documented data — not estimates. From Google Shopping rebuilds to CRO sprints to local SEO domination, the proof is in the numbers.</p>
+              <p class="hp-body">Every case study here is built on documented data — not estimates. From Google Shopping rebuilds to CRO sprints to local SEO domination, the proof is in the numbers.</p>
               <ul class="hp-feature-list">
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Google Ads Search &amp; Shopping</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Meta Ads full-funnel builds</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CRO + landing page optimization</li>
-                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Local SEO &amp; GMB domination</li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Google Ads Search &amp; Shopping
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Meta Ads full-funnel builds
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  CRO + landing page optimization
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Local SEO &amp; GMB domination
+                </li>
               </ul>
               <a href="case-studies.html" class="hp-cta">
                 Browse All Case Studies
@@ -280,7 +260,9 @@
             <div class="hp-graphic" data-aos data-aos-delay="120">
               <div class="hp-graphic__browser">
                 <div class="browser-chrome">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <div class="browser-dots">
+                    <span></span><span></span><span></span>
+                  </div>
                   <div class="browser-bar"></div>
                 </div>
                 <div class="browser-body">
@@ -304,14 +286,55 @@
         </div>
       </section>
 
-      <!-- ── CONTACT CTA ── -->
-      <section class="home-preview home-preview--contact" aria-label="Contact CTA">
+      <!-- ── ABOUT ── -->
+      <section class="home-preview home-preview--about" aria-label="About preview">
+        <div class="container">
+          <div class="hp-grid hp-grid--right">
+
+            <div class="hp-graphic hp-graphic--about" data-aos>
+              <div class="about-preview-card">
+                <div class="apc-photo">
+                  <img src="assets/headshot.webp" alt="TJ Marek" width="180" height="220" loading="lazy" />
+                </div>
+                <div class="apc-info">
+                  <p class="apc-name">TJ Marek</p>
+                  <p class="apc-role">Full-Funnel Strategist</p>
+                  <p class="apc-location">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Austin, TX
+                  </p>
+                  <div class="apc-chips">
+                    <span>Google Certified</span>
+                    <span>Meta Blueprint</span>
+                    <span>GA4</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hp-content" data-aos data-aos-delay="80">
+              <p class="hp-eyebrow"><span class="eyebrow-line"></span>About Me</p>
+              <h2 class="hp-title">Data-first. Strategy-always.</h2>
+              <p class="hp-body">I'm a full-funnel digital marketing strategist based in Austin, TX. Before recommending anything, I look at the tracking infrastructure, the attribution model, and where the real friction lives in the funnel.</p>
+              <p class="hp-body">Strategy without measurement is just opinion. I don't operate that way.</p>
+              <a href="about.html" class="hp-cta">
+                Learn More About Me
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CONTACT ── -->
+      <section class="home-preview home-preview--contact" aria-label="Contact preview">
         <div class="container">
           <div class="hp-contact-inner">
             <div class="hp-contact-text" data-aos>
               <p class="hp-eyebrow hp-eyebrow--light"><span class="eyebrow-line eyebrow-line--light"></span>Let's Work Together</p>
               <h2 class="hp-title hp-title--light">Ready to grow?</h2>
-              <p class="hp-body hp-body--light">Whether you're looking to scale paid media, fix a broken funnel, or build something new — let's talk about what's actually possible.</p>
+              <p class="hp-body hp-body--light">Whether you're looking to scale paid media, fix a broken funnel, or build something new — let's talk about what's actually possible with your budget and goals.</p>
             </div>
             <div class="hp-contact-actions" data-aos data-aos-delay="100">
               <a href="contact.html" class="btn btn--accent-inverse">Start a Conversation</a>
@@ -328,63 +351,6 @@
 
   </main>
 
-  <!-- ── FOOTER ── -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="index.html" class="footer__logo">
-            <img src="assets/logo.png" alt="TJ Marek" width="40" height="40" />
-          </a>
-          <p class="footer__tagline">Full-funnel digital marketing.<br />Built on data. Measured by results.</p>
-          <div class="footer__social">
-            <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="mailto:your@email.com" class="footer__social-link" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer__nav-group">
-          <h3 class="footer__nav-heading">Pages</h3>
-          <ul class="footer__nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="impact.html">My Impact</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="web-design.html">Web Design</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-group">
-          <h3 class="footer__nav-heading">Services</h3>
-          <ul class="footer__nav-list">
-            <li><a href="impact.html">Google Ads / PPC</a></li>
-            <li><a href="impact.html">Meta Advertising</a></li>
-            <li><a href="impact.html">SEO Strategy</a></li>
-            <li><a href="impact.html">CRO &amp; Funnels</a></li>
-            <li><a href="web-design.html">Web Design</a></li>
-            <li><a href="impact.html">Analytics &amp; Tracking</a></li>
-          </ul>
-        </div>
-        <div class="footer__contact-col">
-          <h3 class="footer__nav-heading">Let's Talk</h3>
-          <p class="footer__contact-text">Open to new projects, partnerships, and full-time opportunities.</p>
-          <a href="contact.html" class="btn btn--primary footer__cta-btn">Get In Touch</a>
-          <p class="footer__location">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Austin, TX
-          </p>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 TJ Marek. All rights reserved.</p>
-        <p class="footer__credit">Designed &amp; built by TJ Marek</p>
-      </div>
-    </div>
-  </footer>
-
   <!-- ── STICKY BAR ── -->
   <div class="sticky-bar" role="complementary" aria-label="Quick contact">
     <div class="sticky-bar__status">
@@ -392,16 +358,16 @@
       <span class="status-text">Open to New Opportunities</span>
     </div>
     <div class="sticky-bar__actions">
-      <a href="mailto:your@email.com" class="sticky-link">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:your@email.com" class="sticky-link" aria-label="Send email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         <span>Email</span>
       </a>
-      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="sticky-link">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="sticky-link" aria-label="LinkedIn profile">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         <span>LinkedIn</span>
       </a>
-      <a href="assets/cv-tj-marek.pdf" download class="sticky-link">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <a href="assets/cv-tj-marek.pdf" download class="sticky-link" aria-label="Download CV">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span>CV</span>
       </a>
     </div>
