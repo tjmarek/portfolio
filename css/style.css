@@ -426,7 +426,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 
 /* case cards graphic */
 .hp-graphic__cases { display: flex; flex-direction: column; gap: 0.875rem; width: 100%; max-width: 380px; }
-.mini-case-card { background: var(--bg); border: 1px solid var(--border-mid); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 0.5rem; transition: border-color var(--t), transform var(--t), box-shadow var(--t); }
+.mini-case-card { background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 0.5rem; transition: border-color var(--t), transform var(--t), box-shadow var(--t); }
 .mini-case-card:hover { border-color: var(--border-hover); transform: translateX(4px); box-shadow: var(--shadow-md); }
 .mcc-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); border: 1px solid var(--accent-border); border-radius: 999px; padding: 0.15rem 0.6rem; width: fit-content; font-family: var(--font-body); }
 .mcc-title { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; }
