@@ -49,11 +49,36 @@
   /* ── 3. COUNTER ANIMATION ───────────────────── */
   // Pre-sets final value immediately to lock layout,
   // then counts up visually without changing element dimensions.
-  function animateCounter(el) {
-    const target   = parseFloat(el.dataset.target);
-    const suffix   = el.dataset.suffix   || '';
-    const decimals = parseInt(el.dataset.decimals || '0', 10);
-    const duration = 1600;
+ /* ═══════════════════════════════════════════
+   COUNTER FIX — replace your existing animateCounter()
+   ═══════════════════════════════════════════ */
+function animateCounter(el) {
+  const target   = parseFloat(el.dataset.target);
+  const suffix   = el.dataset.suffix   || '';
+  const decimals = parseInt(el.dataset.decimals || '0', 10);
+  const duration = 1600;
+
+  // 1. Snapshot rendered width BEFORE any text changes
+  const computedWidth = el.getBoundingClientRect().width;
+
+  // 2. Hard-lock it — counter digits can never make this wider/narrower
+  el.style.width     = Math.ceil(computedWidth) + 'px';
+  el.style.display   = 'inline-block';
+  el.style.textAlign = 'center';
+  el.style.overflow  = 'hidden';
+
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    // Ease out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = (target * eased).toFixed(decimals) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
 
     // CRITICAL: set min-width to current rendered width BEFORE animation
     // This is what prevents the image from jumping during count-up.
