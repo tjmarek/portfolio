@@ -747,3 +747,96 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.1;letter-spacing
   .ibar__fill{transform:scaleY(1);}
   .skill-bar__fill{transform:scaleX(1);}
 }
+/* ═══════════════════════════════════════════
+   IMAGE JUMP FIX — paste at bottom of style.css
+   ═══════════════════════════════════════════ */
+
+/* Right column: fixed height, relative container */
+.hero__image-col {
+  position: relative;
+  /* Explicit pixel height so nothing inside can resize it */
+  height: calc(100vh - 72px - 48px - 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  /* Prevent ANY reflow from children */
+  contain: layout size;
+}
+
+/* Image wrapper: completely out of normal flow */
+.hero__image-wrap {
+  position: absolute;
+  inset: 0;
+  bottom: 84px; /* stat strip height + gap */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__headshot {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  /* Force GPU compositing layer — isolates from any reflow */
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  /* Critical: block display kills inline baseline gap */
+  display: block;
+  pointer-events: auto;
+}
+
+/* Stat strip: fixed dimensions, overflow hidden */
+.hero__stat-strip {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 420px;
+  /* Hard-coded height — counter text CANNOT change this */
+  height: 76px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  /* Isolate this element from layout changes above */
+  contain: strict;
+}
+
+/* Each cell: fixed min-width so text changes don't resize the cell */
+.hero__mini-stat {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  contain: strict;
+}
+
+/* Counter text: locked container so width changes are invisible */
+.mini-stat-value {
+  display: block;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  /* This is the key: tabular-nums prevents character-width jitter */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .hero__image-col {
+    height: 380px;
+    contain: layout size;
+  }
+  .hero__image-wrap {
+    bottom: 72px;
+  }
+  .hero__stat-strip {
+    height: 68px;
+  }
+}
