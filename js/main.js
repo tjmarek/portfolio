@@ -142,18 +142,40 @@ function animateCounter(el) {
   }
 
   /* ── 6. IMPACT BAR CHART ANIMATION ──────────── */
-  const ibarFills = document.querySelectorAll('.ibar__fill');
-  if (ibarFills.length) {
-    const ibarObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          ibarObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    ibarFills.forEach(el => ibarObs.observe(el));
-  }
+/* ═══════════════════════════════════════════
+   IMPACT BAR CHART FIX — replace in main.js
+   ═══════════════════════════════════════════ */
+function initImpactBars() {
+  const fills = document.querySelectorAll('.ibar__fill');
+  if (!fills.length) return;
+
+  // Fallback: if already in viewport on load, fire immediately
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Stagger each bar slightly for a polished cascade effect
+        const bar   = entry.target;
+        const index = Array.from(fills).indexOf(bar);
+        setTimeout(() => bar.classList.add('animated'), index * 120);
+        observer.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+
+  fills.forEach((el) => {
+    // If already visible (e.g. on a wide screen where section is in view)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const index = Array.from(fills).indexOf(el);
+      setTimeout(() => el.classList.add('animated'), index * 120);
+    } else {
+      observer.observe(el);
+    }
+  });
+}
+
+initImpactBars();
+
 
   /* ── 7. CASE STUDY FILTER ────────────────────── */
   const filterTabs = document.querySelectorAll('.filter-tab');
