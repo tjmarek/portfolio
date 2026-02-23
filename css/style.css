@@ -781,12 +781,3 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 .home-preview:not(.home-preview--cases) {
   background: var(--bg) !important;
 }
-
-/* Also change inner page white sections */
-.inner-page .channel-card,
-.inner-page .stack-card,
-.inner-page .contact-form-wrap,
-.inner-page .skill-group,
-.inner-page .cert-card,
-.hp-graphic__impact,
-.hp-
