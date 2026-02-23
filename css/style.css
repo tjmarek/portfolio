@@ -340,6 +340,15 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-display);line-height:1.1;letter-spacing
 .ibar--2 .ibar__fill{height:90%;}
 .ibar--3 .ibar__fill{height:70%;}
 .ibar--4 .ibar__fill{height:100%;}
+/* Confirm in style.css */
+.ibar__fill {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ibar__fill.animated {
+  transform: scaleY(1);
+}
 .ibar span{font-size:.65rem;font-weight:700;color:var(--text-dim);letter-spacing:.05em;text-transform:uppercase;}
 .impact-chart-label{text-align:center;font-size:.72rem;font-weight:600;color:var(--text-dim);letter-spacing:.06em;text-transform:uppercase;padding-top:.75rem;border-top:1px solid var(--border);}
 
