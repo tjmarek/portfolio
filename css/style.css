@@ -777,3 +777,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
   .skill-bar__fill { transform: scaleX(1); }
   [data-aos] { opacity: 1; transform: none; }
 }
+/* OFF-WHITE EVERYWHERE except home contact CTA */
+.home-preview--about,
+.home-preview--impact, 
+.home
+
