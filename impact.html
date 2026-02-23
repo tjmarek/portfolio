@@ -80,19 +80,17 @@
             <p class="stat-card__label">Leads Generated</p>
             <p class="stat-card__context">Qualified leads across paid and organic campaigns, tracked end-to-end through CRM integrations.</p>
           </div>
-          
-<div class="hp-graphic__impact" style="max-width: 500px; margin: 0 auto 4rem;">
-  <div class="impact-bar-chart" aria-hidden="true">
-    <div class="ibar ibar--1"><div class="ibar__fill"></div><span>ROAS</span></div>
-    <div class="ibar ibar--2"><div class="ibar__fill"></div><span>CVR</span></div>
-    <div class="ibar ibar--3"><div class="ibar__fill"></div><span>Leads</span></div>
-    <div class="ibar ibar--4"><div class="ibar__fill"></div><span>Rev.</span></div>
-  </div>
-  <div class="impact-chart-label">Growth trajectory</div>
-</div>
         </div>
       </div>
     </section>
+    <section aria-label="Performance Chart" style="padding: 4rem 0 5rem;">
+  <div class="container">
+    <h2 class="section-title" data-aos>Performance Over Time</h2>
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm);">
+      <canvas id="impactChart" height="120"></canvas>
+    </div>
+  </div>
+</section>
     <!-- CHANNEL BREAKDOWN -->
     <section class="impact-section" aria-label="Channel breakdown" style="background: var(--surface); border-top: 1px solid var(--border); padding-top: 4rem;">
       <div class="container">
