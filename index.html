@@ -10,7 +10,6 @@
   <meta property="og:description" content="Full-funnel growth systems: PPC, SEO, CRO, and Web Design. Austin, TX." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tjmarek.com/" />
-  <meta property="og:image" content="/assets/og-image.jpg" />
   <link rel="canonical" href="https://tjmarek.com/" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,14 +23,13 @@
     "name": "TJ Marek",
     "jobTitle": "Digital Marketing Strategist",
     "url": "https://tjmarek.com",
-    "sameAs": ["https://www.linkedin.com/in/yourhandle"],
     "address": { "@type": "PostalAddress", "addressLocality": "Austin", "addressRegion": "TX" }
   }
   </script>
 </head>
 <body class="home-page">
 
-  <!-- ═══════════════════════════ GLOBAL NAV ═══════════════════════════ -->
+  <!-- ── NAV ── -->
   <header class="site-header" role="banner">
     <a href="index.html" class="logo-mark" aria-label="TJ Marek Home">
       <img src="assets/logo.png" alt="TJ Marek logo" width="48" height="48" />
@@ -43,48 +41,42 @@
     </button>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <ul class="nav-list">
-        <li><a href="index.html" class="nav-link active">Home</a></li>
-        <li><a href="impact.html" class="nav-link">My Impact</a></li>
-        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-        <li><a href="web-design.html" class="nav-link">Web Design</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link nav-link--cta">Let's Talk</a></li>
+        <li><a href="index.html"       class="nav-link active">Home</a></li>
+        <li><a href="impact.html"      class="nav-link">My Impact</a></li>
+        <li><a href="case-studies.html"class="nav-link">Case Studies</a></li>
+        <li><a href="web-design.html"  class="nav-link">Web Design</a></li>
+        <li><a href="about.html"       class="nav-link">About</a></li>
+        <li><a href="contact.html"     class="nav-link nav-link--cta">Let's Talk</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
   <main id="main-content">
+
+    <!-- ════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════ -->
     <section class="hero" aria-label="Hero introduction">
 
-      <!-- Falling dust particles — 17 total (+~10%) -->
+      <!-- Dust particles -->
       <div class="hero-dust" aria-hidden="true">
-        <span class="dust d1"></span>
-        <span class="dust d2"></span>
-        <span class="dust d3"></span>
-        <span class="dust d4"></span>
-        <span class="dust d5"></span>
-        <span class="dust d6"></span>
-        <span class="dust d7"></span>
-        <span class="dust d8"></span>
-        <span class="dust d9"></span>
-        <span class="dust d10"></span>
-        <span class="dust d11"></span>
-        <span class="dust d12"></span>
-        <span class="dust d13"></span>
-        <span class="dust d14"></span>
-        <span class="dust d15"></span>
-        <span class="dust d16"></span>
+        <span class="dust d1"></span><span class="dust d2"></span>
+        <span class="dust d3"></span><span class="dust d4"></span>
+        <span class="dust d5"></span><span class="dust d6"></span>
+        <span class="dust d7"></span><span class="dust d8"></span>
+        <span class="dust d9"></span><span class="dust d10"></span>
+        <span class="dust d11"></span><span class="dust d12"></span>
+        <span class="dust d13"></span><span class="dust d14"></span>
+        <span class="dust d15"></span><span class="dust d16"></span>
         <span class="dust d17"></span>
       </div>
 
       <div class="hero__grid">
 
-        <!-- LEFT: Content -->
+        <!-- LEFT -->
         <div class="hero__content">
           <p class="hero__eyebrow">
-            <span class="eyebrow-line"></span>
-            Full-Funnel Digital Marketer
+            <span class="eyebrow-line"></span>Full-Funnel Digital Marketer
           </p>
           <h1 class="hero__name">TJ<br />MAREK</h1>
           <p class="hero__descriptor">
@@ -92,7 +84,7 @@
             PPC · SEO · CRO · Web Design
           </p>
           <div class="hero__actions">
-            <a href="impact.html" class="btn btn--primary">See My Impact</a>
+            <a href="impact.html"       class="btn btn--primary">See My Impact</a>
             <a href="case-studies.html" class="btn btn--ghost">Case Studies</a>
           </div>
           <div class="hero__tags" aria-label="Specializations">
@@ -105,41 +97,261 @@
           </div>
         </div>
 
-        <!-- RIGHT: Headshot + Stats -->
+        <!-- RIGHT: fixed-height column prevents layout jump -->
         <div class="hero__image-col">
           <div class="hero__image-wrap">
             <img
               src="assets/headshot.webp"
               alt="TJ Marek — Digital Marketing Strategist"
               class="hero__headshot"
-              width="560"
-              height="720"
+              width="560" height="720"
               fetchpriority="high"
             />
           </div>
-
-          <!-- Stat strip beneath headshot -->
+          <!-- Stat strip overlaps bottom of headshot -->
           <div class="hero__stat-strip">
             <div class="hero__mini-stat">
-              <span class="mini-stat-value" data-target="5" data-suffix="+">0</span>
-              <span class="mini-stat-label">Years Experience</span>
+              <span class="mini-stat-value" data-target="5" data-suffix="+">5+</span>
+              <span class="mini-stat-label">Years Exp.</span>
             </div>
             <div class="hero__mini-stat">
-              <span class="mini-stat-value" data-target="3.8" data-suffix="x" data-decimals="1">0</span>
+              <span class="mini-stat-value" data-target="4.2" data-suffix="x" data-decimals="1">4.2x</span>
               <span class="mini-stat-label">Avg. ROAS</span>
             </div>
             <div class="hero__mini-stat">
-              <span class="mini-stat-value" data-target="120" data-suffix="k+">0</span>
-              <span class="mini-stat-label">Leads Generated</span>
+              <span class="mini-stat-value" data-target="120" data-suffix="k+">120k+</span>
+              <span class="mini-stat-label">Leads Gen.</span>
             </div>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- ════════════════════════════════════════
+         PAGE PREVIEW SECTIONS
+    ════════════════════════════════════════ -->
+    <div class="home-sections">
+
+      <!-- ── MY IMPACT ── -->
+      <section class="home-preview home-preview--impact" aria-label="My Impact preview">
+        <div class="container">
+          <div class="hp-grid hp-grid--left">
+
+            <div class="hp-content" data-aos>
+              <p class="hp-eyebrow"><span class="eyebrow-line"></span>Measurable Results</p>
+              <h2 class="hp-title">Numbers that move the needle</h2>
+              <p class="hp-body">Over 4+ years of full-funnel execution, I've built campaigns that converted — not just clicked. Every number is tracked, attributed, and defensible.</p>
+              <div class="hp-stats-row">
+                <div class="hp-stat">
+                  <span class="hp-stat__val">4.2x</span>
+                  <span class="hp-stat__label">Peak ROAS</span>
+                </div>
+                <div class="hp-stat">
+                  <span class="hp-stat__val">$2.3M+</span>
+                  <span class="hp-stat__label">Revenue Attributed</span>
+                </div>
+                <div class="hp-stat">
+                  <span class="hp-stat__val">310%</span>
+                  <span class="hp-stat__label">Max CVR Lift</span>
+                </div>
+              </div>
+              <a href="impact.html" class="hp-cta">
+                View Full Impact Report
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <div class="hp-graphic" data-aos data-aos-delay="120">
+              <div class="hp-graphic__impact">
+                <div class="impact-bar-chart" aria-hidden="true">
+                  <div class="ibar ibar--1"><div class="ibar__fill"></div><span>ROAS</span></div>
+                  <div class="ibar ibar--2"><div class="ibar__fill"></div><span>CVR</span></div>
+                  <div class="ibar ibar--3"><div class="ibar__fill"></div><span>Leads</span></div>
+                  <div class="ibar ibar--4"><div class="ibar__fill"></div><span>Rev.</span></div>
+                </div>
+                <div class="impact-chart-label">Growth trajectory</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CASE STUDIES ── -->
+      <section class="home-preview home-preview--cases" aria-label="Case Studies preview">
+        <div class="container">
+          <div class="hp-grid hp-grid--right">
+
+            <div class="hp-graphic" data-aos>
+              <div class="hp-graphic__cases">
+                <div class="mini-case-card" data-aos data-aos-delay="60">
+                  <span class="mcc-tag">Google Ads</span>
+                  <p class="mcc-title">1.1x → 4.2x ROAS in 90 days</p>
+                  <div class="mcc-stat">4.2x</div>
+                </div>
+                <div class="mini-case-card" data-aos data-aos-delay="140">
+                  <span class="mcc-tag">CRO</span>
+                  <p class="mcc-title">Landing page CVR: 1.4% → 5.7%</p>
+                  <div class="mcc-stat">310%↑</div>
+                </div>
+                <div class="mini-case-card" data-aos data-aos-delay="220">
+                  <span class="mcc-tag">Local SEO</span>
+                  <p class="mcc-title">2x inbound calls via GMB overhaul</p>
+                  <div class="mcc-stat">11/14</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hp-content" data-aos data-aos-delay="80">
+              <p class="hp-eyebrow"><span class="eyebrow-line"></span>Proof of Work</p>
+              <h2 class="hp-title">Real campaigns. Real budgets.</h2>
+              <p class="hp-body">Every case study here is built on documented data — not estimates. From Google Shopping rebuilds to CRO sprints to local SEO domination, the proof is in the numbers.</p>
+              <ul class="hp-feature-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Google Ads Search &amp; Shopping
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Meta Ads full-funnel builds
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  CRO + landing page optimization
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Local SEO &amp; GMB domination
+                </li>
+              </ul>
+              <a href="case-studies.html" class="hp-cta">
+                Browse All Case Studies
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── WEB DESIGN ── -->
+      <section class="home-preview home-preview--design" aria-label="Web Design preview">
+        <div class="container">
+          <div class="hp-grid hp-grid--left">
+
+            <div class="hp-content" data-aos>
+              <p class="hp-eyebrow"><span class="eyebrow-line"></span>Web Design</p>
+              <h2 class="hp-title">Sites built to convert, not just impress</h2>
+              <p class="hp-body">Every site I build starts with the conversion goal — not the color palette. Clean, fast, and focused on turning traffic into leads or revenue.</p>
+              <div class="hp-tool-chips">
+                <span class="tool-chip">Webflow</span>
+                <span class="tool-chip">WordPress</span>
+                <span class="tool-chip">Shopify</span>
+                <span class="tool-chip">Custom HTML/CSS</span>
+                <span class="tool-chip">CRO Frameworks</span>
+              </div>
+              <a href="web-design.html" class="hp-cta">
+                View Web Projects
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <div class="hp-graphic" data-aos data-aos-delay="120">
+              <div class="hp-graphic__browser">
+                <div class="browser-chrome">
+                  <div class="browser-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="browser-bar"></div>
+                </div>
+                <div class="browser-body">
+                  <div class="browser-hero-mock"></div>
+                  <div class="browser-content-mock">
+                    <div class="bcm-line bcm-line--wide"></div>
+                    <div class="bcm-line bcm-line--med"></div>
+                    <div class="bcm-line bcm-line--short"></div>
+                    <div class="bcm-btn-mock"></div>
+                  </div>
+                  <div class="browser-grid-mock">
+                    <div class="bgm-card"></div>
+                    <div class="bgm-card"></div>
+                    <div class="bgm-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── ABOUT ── -->
+      <section class="home-preview home-preview--about" aria-label="About preview">
+        <div class="container">
+          <div class="hp-grid hp-grid--right">
+
+            <div class="hp-graphic hp-graphic--about" data-aos>
+              <div class="about-preview-card">
+                <div class="apc-photo">
+                  <img src="assets/headshot.webp" alt="TJ Marek" width="180" height="220" loading="lazy" />
+                </div>
+                <div class="apc-info">
+                  <p class="apc-name">TJ Marek</p>
+                  <p class="apc-role">Full-Funnel Strategist</p>
+                  <p class="apc-location">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Austin, TX
+                  </p>
+                  <div class="apc-chips">
+                    <span>Google Certified</span>
+                    <span>Meta Blueprint</span>
+                    <span>GA4</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hp-content" data-aos data-aos-delay="80">
+              <p class="hp-eyebrow"><span class="eyebrow-line"></span>About Me</p>
+              <h2 class="hp-title">Data-first. Strategy-always.</h2>
+              <p class="hp-body">I'm a full-funnel digital marketing strategist based in Austin, TX. Before recommending anything, I look at the tracking infrastructure, the attribution model, and where the real friction lives in the funnel.</p>
+              <p class="hp-body">Strategy without measurement is just opinion. I don't operate that way.</p>
+              <a href="about.html" class="hp-cta">
+                Learn More About Me
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CONTACT ── -->
+      <section class="home-preview home-preview--contact" aria-label="Contact preview">
+        <div class="container">
+          <div class="hp-contact-inner">
+            <div class="hp-contact-text" data-aos>
+              <p class="hp-eyebrow hp-eyebrow--light"><span class="eyebrow-line eyebrow-line--light"></span>Let's Work Together</p>
+              <h2 class="hp-title hp-title--light">Ready to grow?</h2>
+              <p class="hp-body hp-body--light">Whether you're looking to scale paid media, fix a broken funnel, or build something new — let's talk about what's actually possible with your budget and goals.</p>
+            </div>
+            <div class="hp-contact-actions" data-aos data-aos-delay="100">
+              <a href="contact.html" class="btn btn--accent-inverse">Start a Conversation</a>
+              <a href="assets/cv-tj-marek.pdf" download class="btn btn--ghost-light">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /home-sections -->
+
   </main>
 
-  <!-- ═══════════════════════════ STICKY CONTACT BAR ═══════════════════════════ -->
+  <!-- ── STICKY BAR ── -->
   <div class="sticky-bar" role="complementary" aria-label="Quick contact">
     <div class="sticky-bar__status">
       <span class="pulse-dot" aria-hidden="true"></span>
@@ -160,10 +372,6 @@
       </a>
     </div>
   </div>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
 
   <script src="js/main.js"></script>
 </body>
