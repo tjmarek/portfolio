@@ -344,7 +344,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 ═══════════════════════════════════════════════ */
 .home-sections { position: relative; z-index: 1; }
 .home-preview { padding: clamp(5rem, 10vh, 8rem) 0; position: relative; overflow: hidden; }
-.home-preview--about   { background: var(--bg); border-top: 1px solid var(--border); }
+.home-preview--about   { background: var(--bg); border-top: 0px solid var(--border); }
 .home-preview--impact  { background: var(--bg); }
 .home-preview--cases   { background: var(--surface); border-top: 1px solid var(--border); }
 .home-preview--design  { background: var(--bg); }
