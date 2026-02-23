@@ -236,40 +236,33 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
    and counter text CANNOT affect layout at all.
 ──────────────────────────────────────────────── */
 .hero__image-col {
-  /* Grid: row 1 = image area, row 2 = fixed-height strip */
   display: grid;
   grid-template-rows: 1fr var(--strip-h);
-  /* Fixed height so nothing inside can resize the column */
   height: calc(100vh - var(--nav-h) - var(--bar-h) - 4rem);
-  /* Containment prevents any internal change from causing
-     external reflow — this is what kills the jump */
   contain: layout size;
   align-items: end;
 }
 
-/* Image area — fills row 1 completely */
 .hero__image-wrap {
   grid-row: 1;
-  /* Relative so the image can fill it */
-  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  /* Anchor image to the BOTTOM of the image row so it sits right on the strip */
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
 }
 
 .hero__headshot {
-  /* Size relative to the wrapper, not the document */
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
+  /* Let the image grow as tall as the wrapper allows */
   height: 100%;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
-  object-position: center center;
+  /* Pin to the bottom so feet/torso meet the strip with no gap */
+  object-position: center bottom;
   display: block;
-  /* GPU compositing layer — paint changes never cause reflow */
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
@@ -278,6 +271,12 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 }
 .hero__headshot:hover {
   filter: drop-shadow(0 32px 64px rgba(54,69,79,0.22)) drop-shadow(0 8px 20px rgba(54,69,79,0.13));
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero__image-col  { height: 400px; }
+  .hero__image-wrap { align-items: flex-end; }
 }
 
 /* Stat strip — lives in row 2, fixed height */
