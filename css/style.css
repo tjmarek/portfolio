@@ -344,7 +344,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 ═══════════════════════════════════════════════ */
 .home-sections { position: relative; z-index: 1; }
 .home-preview { padding: clamp(5rem, 10vh, 8rem) 0; position: relative; overflow: hidden; }
-.home-preview--about   { background: var(--surface); border-top: 1px solid var(--border); }
+.home-preview--about   { background: var(--bg); border-top: 1px solid var(--border); }
 .home-preview--impact  { background: var(--bg); }
 .home-preview--cases   { background: var(--surface); border-top: 1px solid var(--border); }
 .home-preview--design  { background: var(--bg); }
@@ -605,7 +605,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .project-tag { font-size: 0.69rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); background: var(--bg-2); border: 1px solid var(--border-mid); border-radius: 999px; padding: 0.2rem 0.7rem; transition: border-color var(--t), color var(--t); font-family: var(--font-body); }
 .project-tag:hover { border-color: var(--border-hover); color: var(--accent); }
-.philosophy-grid { display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: start; margin-bottom: 5rem; }
+.philosophy-grid { background: var(--bg); display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: start; margin-bottom: 5rem; }
 .philosophy-text h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 1.25rem; }
 .philosophy-text p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
 .philosophy-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
@@ -628,7 +628,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 .about-image-frame img { width: 100%; display: block; object-fit: cover; transition: transform 0.6s var(--ease); }
 .about-image-frame:hover img { transform: scale(1.03); }
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
-.skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); }
+.skill-group { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); }
 .skill-group h3 { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1.5rem; font-family: var(--font-body); }
 .skill-bars { display: flex; flex-direction: column; gap: 1.25rem; }
 .skill-item { display: flex; flex-direction: column; gap: 0.4rem; }
