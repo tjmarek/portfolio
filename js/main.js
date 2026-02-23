@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════════════
-   TJ MAREK PORTFOLIO — MAIN JS
+   TJ MAREK PORTFOLIO — MAIN JS v4
    ═══════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* ── 1. HEADER SCROLL ───────────────────────── */
+  /* ── 1. HEADER SCROLL ─────────────────────── */
   const header = document.querySelector('.site-header');
   if (header) {
     const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
@@ -12,32 +12,28 @@
     onScroll();
   }
 
-  /* ── 2. MOBILE NAV ──────────────────────────── */
+  /* ── 2. MOBILE NAV ────────────────────────── */
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav   = document.querySelector('.main-nav');
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      const open = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-    mainNav.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if (mainNav.classList.contains('open') &&
-          !mainNav.contains(e.target) &&
-          !navToggle.contains(e.target)) {
+    mainNav.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }));
+    document.addEventListener('click', e => {
+      if (mainNav.classList.contains('open') && !mainNav.contains(e.target) && !navToggle.contains(e.target)) {
         mainNav.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
     });
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && mainNav.classList.contains('open')) {
         mainNav.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
@@ -46,51 +42,54 @@
     });
   }
 
-  /* ── 3. COUNTER ANIMATION ───────────────────── */
-  // Pre-sets final value immediately to lock layout,
-  // then counts up visually without changing element dimensions.
+  /* ── 3. COUNTER — NO LAYOUT JUMP FIX ─────────────────────
+     Strategy:
+     1. Read the element's rendered width BEFORE animation.
+     2. Hard-lock it with style.width so text changes can NEVER
+        make the element wider or narrower.
+     3. Count up purely visually inside that locked box.
+  ──────────────────────────────────────────────────────── */
   function animateCounter(el) {
     const target   = parseFloat(el.dataset.target);
     const suffix   = el.dataset.suffix   || '';
     const decimals = parseInt(el.dataset.decimals || '0', 10);
     const duration = 1600;
 
-    // CRITICAL: set min-width to current rendered width BEFORE animation
-    // This is what prevents the image from jumping during count-up.
-    const currentW = el.getBoundingClientRect().width;
-    el.style.minWidth = currentW + 'px';
-    el.style.display  = 'inline-block';
-    el.style.textAlign = 'center';
+    // Lock dimensions before a single character changes
+    const rect = el.getBoundingClientRect();
+    el.style.width      = rect.width  + 'px';
+    el.style.height     = rect.height + 'px';
+    el.style.display    = 'inline-block';
+    el.style.textAlign  = 'center';
+    el.style.overflow   = 'hidden';
 
     const start = performance.now();
-    function update(now) {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / duration, 1);
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
       const eased    = 1 - Math.pow(1 - progress, 3);
-      const current  = target * eased;
-      el.textContent = current.toFixed(decimals) + suffix;
-      if (progress < 1) requestAnimationFrame(update);
+      el.textContent  = (target * eased).toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
     }
-    requestAnimationFrame(update);
+    requestAnimationFrame(tick);
   }
 
   const counterEls = document.querySelectorAll('[data-target]');
   if (counterEls.length) {
-    const counterObs = new IntersectionObserver((entries) => {
+    const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           animateCounter(entry.target);
-          counterObs.unobserve(entry.target);
+          obs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.5 });
-    counterEls.forEach(el => counterObs.observe(el));
+    counterEls.forEach(el => obs.observe(el));
   }
 
-  /* ── 4. AOS (Animate on Scroll) ─────────────── */
+  /* ── 4. AOS ───────────────────────────────── */
   const aosEls = document.querySelectorAll('[data-aos]');
   if (aosEls.length) {
-    const aosObs = new IntersectionObserver((entries) => {
+    const aosObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const delay = parseInt(entry.target.dataset.aosDelay || '0', 10);
@@ -102,72 +101,34 @@
     aosEls.forEach(el => aosObs.observe(el));
   }
 
-  /* ── 5. SKILL BAR ANIMATION ─────────────────── */
+  /* ── 5. SKILL BARS ────────────────────────── */
   const skillFills = document.querySelectorAll('.skill-bar__fill');
   if (skillFills.length) {
-    const skillObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          skillObs.unobserve(entry.target);
-        }
-      });
+    const sObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animated'); sObs.unobserve(e.target); }});
     }, { threshold: 0.3 });
-    skillFills.forEach(el => skillObs.observe(el));
+    skillFills.forEach(el => sObs.observe(el));
   }
 
-  /* ── 6. IMPACT BAR CHART ANIMATION ──────────── */
+  /* ── 6. IMPACT BAR CHART ──────────────────── */
   const ibarFills = document.querySelectorAll('.ibar__fill');
   if (ibarFills.length) {
-    const ibarObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          ibarObs.unobserve(entry.target);
-        }
-      });
+    const iObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animated'); iObs.unobserve(e.target); }});
     }, { threshold: 0.3 });
-    ibarFills.forEach(el => ibarObs.observe(el));
+    ibarFills.forEach(el => iObs.observe(el));
   }
 
-  /* ── 7. CASE STUDY FILTER ────────────────────── */
+  /* ── 7. CASE STUDY FILTER ─────────────────── */
   const filterTabs = document.querySelectorAll('.filter-tab');
   const csCards    = document.querySelectorAll('.cs-card[data-category]');
   if (filterTabs.length && csCards.length) {
-    filterTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        filterTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const filter = tab.dataset.filter;
-        csCards.forEach(card => {
-          card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
-        });
-      });
-    });
+    filterTabs.forEach(tab => tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      csCards.forEach(c => c.classList.toggle('hidden', f !== 'all' && c.dataset.category !== f));
+    }));
   }
 
-  /* ── 8. CONTACT FORM ─────────────────────────── */
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('[type="submit"]');
-      if (!btn) return;
-      const original = btn.textContent;
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = '✓ Message Sent!';
-        contactForm.reset();
-        setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3000);
-      }, 1200);
-    });
-  }
-
-  /* ── 9. ACTIVE NAV LINK ──────────────────────── */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === currentPage);
-  });
-
-})();
+  /* ── 8. CONTACT FORM ──
