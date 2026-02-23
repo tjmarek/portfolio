@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WEB DESIGN — TJ Marek</title>
-  <meta name="description" content="PAGE DESCRIPTION" />
+  <title>Web Design — TJ Marek</title>
+  <meta name="description" content="Web design projects by TJ Marek — conversion-focused sites built on Webflow, WordPress, Shopify, and custom HTML/CSS." />
+  <link rel="canonical" href="https://tjmarek.github.io/portfolio/web-design.html" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<!-- NOTE: inner pages use class "inner-page", NOT "home-page" -->
 <body class="inner-page">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <header class="site-header" role="banner">
     <a href="index.html" class="logo-mark" aria-label="TJ Marek Home">
-      <img src="assets/logo.png" alt="TJ Marek logo" width="48" height="48" />
+      <img src="assets/logo.png" alt="TJ Marek" width="48" height="48" />
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span class="hamburger-line"></span>
@@ -25,12 +27,12 @@
     </button>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="impact.html" class="nav-link">My Impact</a></li>
+        <li><a href="index.html"        class="nav-link">Home</a></li>
+        <li><a href="about.html"        class="nav-link">About</a></li>
+        <li><a href="impact.html"       class="nav-link">My Impact</a></li>
         <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
-        <li><a href="web-design.html" class="nav-link active">Web Design</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link nav-link--cta">Let's Talk</a></li>
+        <li><a href="web-design.html"   class="nav-link active">Web Design</a></li>
+        <li><a href="contact.html"      class="nav-link nav-link--cta">Let's Talk</a></li>
       </ul>
     </nav>
   </header>
@@ -39,227 +41,185 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="page-eyebrow"><span class="eyebrow-line"></span> Built to Convert</p>
-        <h1 class="page-title">Web <span class="text-accent">Design</span></h1>
-        <p class="page-subtitle">Websites aren't brochures. Every project I build is engineered to rank, load fast, and turn visitors into leads.</p>
+        <p class="page-eyebrow"><span class="eyebrow-line"></span>Design Work</p>
+        <h1 class="page-title">Web Design</h1>
+        <p class="page-subtitle">Every project starts with the conversion goal. Design is the vehicle — not the destination.</p>
       </div>
     </section>
 
-    <!-- DESIGN PHILOSOPHY -->
-    <section class="design-philosophy">
+    <!-- PROJECTS -->
+    <section aria-label="Web design projects">
       <div class="container">
-        <div class="philosophy-grid">
-          <div class="philosophy-text">
-            <h2>Design Meets <span class="text-accent">Performance</span></h2>
-            <p>My web design work sits at the intersection of aesthetics and function. A beautiful site that doesn't convert is just expensive art. I design with CRO principles baked in from the wireframe stage.</p>
-            <p>Every project starts with the user's intent and the client's conversion goal — then I work backward through layout, hierarchy, copy, and interaction design.</p>
-            <ul class="philosophy-list">
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Core Web Vitals optimized on every build
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Schema markup and on-page SEO built in
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                GTM + GA4 tracking architecture on every project
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Mobile-first, fully responsive layouts
-              </li>
-            </ul>
-          </div>
-          <div class="philosophy-stack">
-            <h3>Tech Stack</h3>
-            <div class="stack-tags">
-              <span class="stack-tag">HTML5</span>
-              <span class="stack-tag">CSS3 / Sass</span>
-              <span class="stack-tag">JavaScript</span>
-              <span class="stack-tag">WordPress</span>
-              <span class="stack-tag">Webflow</span>
-              <span class="stack-tag">Figma</span>
-              <span class="stack-tag">GTM</span>
-              <span class="stack-tag">GA4</span>
-              <span class="stack-tag">Netlify</span>
-              <span class="stack-tag">GitHub</span>
+        <h2 class="section-title" data-aos>Recent Projects</h2>
+        <div class="project-grid">
+
+          <div class="project-card" data-aos>
+            <div class="project-card__thumb"><span class="project-card__thumb-label">Portfolio Site</span></div>
+            <div class="project-card__info">
+              <h3>Personal Portfolio — This Site</h3>
+              <p>Full custom build in HTML/CSS/JS. Designed from scratch around a conversion-first philosophy — fast, accessible, and built to rank.</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML/CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">CRO</span>
+              </div>
             </div>
           </div>
+
+          <div class="project-card" data-aos data-aos-delay="80">
+            <div class="project-card__thumb"><span class="project-card__thumb-label">Lead Gen Site</span></div>
+            <div class="project-card__info">
+              <h3>Home Services Lead Gen Site</h3>
+              <p>Webflow build for a multi-location home services brand. PAS framework landing pages, GTM tracking, and a HubSpot CRM integration for lead routing.</p>
+              <div class="project-tags">
+                <span class="project-tag">Webflow</span>
+                <span class="project-tag">GTM</span>
+                <span class="project-tag">HubSpot</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos data-aos-delay="160">
+            <div class="project-card__thumb"><span class="project-card__thumb-label">eCommerce</span></div>
+            <div class="project-card__info">
+              <h3>Shopify eCommerce Redesign</h3>
+              <p>Full Shopify theme redesign focused on reducing cart abandonment. Single-page checkout, trust badge placement, and upsell widget integration.</p>
+              <div class="project-tags">
+                <span class="project-tag">Shopify</span>
+                <span class="project-tag">CRO</span>
+                <span class="project-tag">UX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos>
+            <div class="project-card__thumb"><span class="project-card__thumb-label">SaaS Landing Page</span></div>
+            <div class="project-card__info">
+              <h3>B2B SaaS Landing Pages</h3>
+              <p>Series of high-converting landing pages for a B2B SaaS client. Each page built around a specific ad group theme with variant testing via VWO.</p>
+              <div class="project-tags">
+                <span class="project-tag">WordPress</span>
+                <span class="project-tag">VWO</span>
+                <span class="project-tag">A/B Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos data-aos-delay="80">
+            <div class="project-card__thumb"><span class="project-card__thumb-label">Local Business</span></div>
+            <div class="project-card__info">
+              <h3>Local Business Website Rebuild</h3>
+              <p>WordPress rebuild for a local business with a focus on local SEO — schema markup, Core Web Vitals optimization, and GBP integration.</p>
+              <div class="project-tags">
+                <span class="project-tag">WordPress</span>
+                <span class="project-tag">Local SEO</span>
+                <span class="project-tag">Schema</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos data-aos-delay="160">
+            <div class="project-card__thumb"><span class="project-card__thumb-label">Agency Site</span></div>
+            <div class="project-card__info">
+              <h3>Marketing Agency Site</h3>
+              <p>Webflow site for a digital agency. Service-specific landing pages, case study templates, and a GoHighLevel CRM integration for lead capture.</p>
+              <div class="project-tags">
+                <span class="project-tag">Webflow</span>
+                <span class="project-tag">GoHighLevel</span>
+                <span class="project-tag">CRO</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- PROJECT GALLERY -->
-    <section class="project-gallery">
+    <!-- PHILOSOPHY -->
+    <section aria-label="Design philosophy" style="background: var(--surface); border-top: 1px solid var(--border); padding: 4rem 0 5rem;">
       <div class="container">
-        <h2 class="section-title">Selected <span class="text-accent">Work</span></h2>
-        <div class="project-grid">
-
-          <div class="project-card">
-            <div class="project-card__preview" aria-label="Project preview placeholder">
-              <div class="preview-placeholder">
-                <span>Project Screenshot</span>
-              </div>
-              <div class="project-card__overlay">
-                <a href="#" class="project-card__visit" aria-label="View live project">View Live Site</a>
-              </div>
-            </div>
-            <div class="project-card__info">
-              <h3>Specialty Contractor Website Redesign</h3>
-              <p>Full redesign and development — focused on local SEO, lead generation, and Core Web Vitals performance.</p>
-              <div class="project-tags">
-                <span class="project-tag">WordPress</span>
-                <span class="project-tag">SEO</span>
-                <span class="project-tag">CRO</span>
-              </div>
+        <div class="philosophy-grid" data-aos>
+          <div class="philosophy-text">
+            <h2>How I Approach Web Design</h2>
+            <p>Design is downstream of strategy. Before I open a design tool, I define the primary conversion action, the user's job-to-be-done, and the traffic source that will land on the page.</p>
+            <p>Every element earns its place. If a section doesn't move the user closer to converting, it gets cut. Speed, accessibility, and clean markup are non-negotiable — they're part of the conversion strategy.</p>
+            <ul class="philosophy-list">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Conversion goal defined before design begins</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>GTM &amp; GA4 tracking built in from day one</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Core Web Vitals optimized at launch</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>WCAG AA accessible as standard</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Copy written to PAS or AIDA framework</li>
+            </ul>
+          </div>
+          <div class="stack-card">
+            <h3>Tech Stack</h3>
+            <div class="stack-chips">
+              <span class="stack-chip">Webflow</span>
+              <span class="stack-chip">WordPress</span>
+              <span class="stack-chip">Shopify</span>
+              <span class="stack-chip">HTML / CSS</span>
+              <span class="stack-chip">JavaScript</span>
+              <span class="stack-chip">GTM</span>
+              <span class="stack-chip">GA4</span>
+              <span class="stack-chip">HubSpot</span>
+              <span class="stack-chip">GoHighLevel</span>
+              <span class="stack-chip">Figma</span>
+              <span class="stack-chip">Unbounce</span>
+              <span class="stack-chip">VWO</span>
             </div>
           </div>
-
-          <div class="project-card">
-            <div class="project-card__preview" aria-label="Project preview placeholder">
-              <div class="preview-placeholder">
-                <span>Project Screenshot</span>
-              </div>
-              <div class="project-card__overlay">
-                <a href="#" class="project-card__visit" aria-label="View live project">View Live Site</a>
-              </div>
-            </div>
-            <div class="project-card__info">
-              <h3>PPC Landing Page System</h3>
-              <p>Modular landing page templates built for speed, message match, and A/B testing — connected to GA4 conversion tracking.</p>
-              <div class="project-tags">
-                <span class="project-tag">HTML/CSS</span>
-                <span class="project-tag">GTM</span>
-                <span class="project-tag">CRO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card__preview" aria-label="Project preview placeholder">
-              <div class="preview-placeholder">
-                <span>Project Screenshot</span>
-              </div>
-              <div class="project-card__overlay">
-                <a href="#" class="project-card__visit" aria-label="View live project">View Live Site</a>
-              </div>
-            </div>
-            <div class="project-card__info">
-              <h3>Freelance: Service Business Website</h3>
-              <p>Clean, conversion-focused site for a local service business — built with local SEO architecture and integrated lead capture.</p>
-              <div class="project-tags">
-                <span class="project-tag">Webflow</span>
-                <span class="project-tag">Local SEO</span>
-                <span class="project-tag">GA4</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <div class="sticky-bar" role="complementary" aria-label="Quick contact">
-    <div class="sticky-bar__status">
-      <span class="pulse-dot" aria-hidden="true"></span>
-      <span class="status-text">Open to New Opportunities</span>
-    </div>
-    <div class="sticky-bar__actions">
-      <a href="mailto:your@email.com" class="sticky-link" aria-label="Send email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        <span>Email</span>
-      </a>
-      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="sticky-link" aria-label="LinkedIn profile">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <a href="assets/cv-tj-marek.pdf" download class="sticky-link" aria-label="Download CV">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        <span>CV</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-     SITE FOOTER — paste before </body> on every page
-     ═══════════════════════════════════════════ -->
-<footer class="site-footer">
-  <div class="container">
-
-    <div class="footer__inner">
-
-      <!-- Brand -->
-      <div class="footer__brand">
-        <a href="index.html" class="footer__logo-link">
-          <img src="assets/logo.png" alt="TJ Marek" width="42" height="42" />
-        </a>
-        <p class="footer__tagline">
-          Full-funnel digital marketing.<br />
-          Built on data. Measured by results.
-        </p>
-        <div class="footer__socials">
-          <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer__social-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="mailto:your@email.com" aria-label="Email" class="footer__social-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </a>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo-link"><img src="assets/logo.png" alt="TJ Marek" width="42" height="42" /></a>
+          <p class="footer__tagline">Full-funnel digital marketing.<br />Built on data. Measured by results.</p>
+          <div class="footer__socials">
+            <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="footer__social-icon" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:your@email.com" class="footer__social-icon" aria-label="Email"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Pages</h3>
+          <ul class="footer__nav">
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+            <li><a href="impact.html">My Impact</a></li><li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="web-design.html">Web Design</a></li><li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Services</h3>
+          <ul class="footer__nav">
+            <li><a href="impact.html">Google &amp; Meta Ads</a></li><li><a href="impact.html">SEO Strategy</a></li>
+            <li><a href="impact.html">CRO &amp; Funnels</a></li><li><a href="impact.html">GA4 &amp; GTM</a></li>
+            <li><a href="web-design.html">Web Design</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--cta">
+          <h3 class="footer__col-heading">Let's Talk</h3>
+          <p class="footer__cta-text">Open to new projects, partnerships, and full-time opportunities.</p>
+          <a href="contact.html" class="footer__cta-btn">Get In Touch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <span class="footer__location"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Austin, TX</span>
         </div>
       </div>
-
-      <!-- Nav: Pages -->
-      <div class="footer__col">
-        <h3 class="footer__col-heading">Pages</h3>
-        <ul class="footer__nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="impact.html">My Impact</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="web-design.html">Web Design</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Nav: Services -->
-      <div class="footer__col">
-        <h3 class="footer__col-heading">Services</h3>
-        <ul class="footer__nav">
-          <li><a href="impact.html">Google &amp; Meta Ads</a></li>
-          <li><a href="impact.html">SEO Strategy</a></li>
-          <li><a href="impact.html">CRO &amp; Funnels</a></li>
-          <li><a href="impact.html">GA4 &amp; GTM</a></li>
-          <li><a href="web-design.html">Web Design</a></li>
-        </ul>
-      </div>
-
-      <!-- CTA -->
-      <div class="footer__col footer__col--cta">
-        <h3 class="footer__col-heading">Let's Talk</h3>
-        <p class="footer__cta-text">Open to new projects, partnerships, and full-time opportunities.</p>
-        <a href="contact.html" class="footer__cta-btn">
-          Get In Touch
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <span class="footer__location">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Austin, TX
-        </span>
-      </div>
-
-    </div><!-- /footer__inner -->
-
-    <div class="footer__bottom">
-      <p>&copy; 2026 TJ Marek. All rights reserved.</p>
-      <p>Designed &amp; built by TJ Marek</p>
+      <div class="footer__bottom"><p>&copy; 2026 TJ Marek. All rights reserved.</p><p>Designed &amp; built by TJ Marek</p></div>
     </div>
+  </footer>
 
+  <div class="sticky-bar" role="complementary">
+    <div class="sticky-bar__status"><span class="pulse-dot" aria-hidden="true"></span><span class="status-text">Open to New Opportunities</span></div>
+    <div class="sticky-bar__actions">
+      <a href="mailto:your@email.com" class="sticky-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>Email</span></a>
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="sticky-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span></a>
+      <a href="assets/cv-tj-marek.pdf" download class="sticky-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>CV</span></a>
+    </div>
   </div>
-</footer>
-
 
   <script src="js/main.js"></script>
 </body>
