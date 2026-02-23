@@ -243,36 +243,32 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
    is the only in-flow child. Counter text changes
    cannot trigger layout recalculation on the image.
 ──────────────────────────────────────────────── */
+/* REPLACE in style.css */
 .hero__image-col {
   position: relative;
-  /* Fixed height — nothing inside can resize this */
   height: calc(100vh - var(--nav-h) - var(--bar-h) - 3rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  /* CSS containment: children cannot affect outside layout */
+  align-items: center; /* centers the stat strip horizontally */
   contain: layout size;
 }
 
-/* REPLACE in style.css */
 .hero__image-wrap {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 80px;
-  /* CENTER vertically instead of anchoring to bottom */
+  bottom: 88px; /* clears the strip height + small gap */
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically centers the headshot */
   justify-content: center;
   pointer-events: none;
   z-index: 1;
 }
 
 .hero__headshot {
-  /* Let the image size naturally, centered in the space */
-  height: 90%;
+  height: 88%;
   width: auto;
   max-width: 100%;
   max-height: 100%;
@@ -287,12 +283,29 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
   transition: filter 0.5s ease;
 }
 
+.hero__stat-strip {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  /* Fixed width so it centers under the image cleanly */
+  width: 90%;
+  max-width: 420px;
+  height: 76px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 0.25rem;
+  contain: strict;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
-  .hero__image-wrap {
-    bottom: 72px;
-    align-items: center;
-  }
+  .hero__image-col  { height: 380px; }
+  .hero__image-wrap { bottom: 76px; align-items: center; }
+  .hero__stat-strip { width: 100%; max-width: 100%; height: 68px; }
 }
 .hero__headshot:hover { filter: drop-shadow(0 32px 64px rgba(54,69,79,0.22)) drop-shadow(0 8px 20px rgba(54,69,79,0.13)); }
 
