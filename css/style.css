@@ -274,9 +274,10 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-  .hero__image-col  { height: 400px; }
-  .hero__image-wrap { align-items: flex-end; }
+@media (min-width: 769px) {
+  .hero__image-col {
+    padding-bottom: 2rem; /* adjust this value to taste — more = higher strip */
+  }
 }
 
 /* Stat strip — lives in row 2, fixed height */
