@@ -611,10 +611,10 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.1; letter-
 .philosophy-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .philosophy-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--text-secondary); }
 .philosophy-list li svg { color: var(--accent); flex-shrink: 0; }
-.stack-card { background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); }
+.stack-card { background: var(--bg); border: 1px solid var(--border-mid); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); }
 .stack-card h3 { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1.25rem; font-family: var(--font-body); }
 .stack-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.stack-chip { font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); background: var(--bg-2); border: 1px solid var(--border-mid); border-radius: var(--radius-sm); padding: 0.35rem 0.875rem; transition: border-color var(--t), color var(--t), background var(--t); }
+.stack-chip { font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--radius-sm); padding: 0.35rem 0.875rem; transition: border-color var(--t), color var(--t), background var(--t); }
 .stack-chip:hover { border-color: var(--border-hover); color: var(--accent); background: var(--accent-light); }
 
 /* ═══════════════════════════════════════════════
