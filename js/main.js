@@ -1,33 +1,26 @@
 /* ═══════════════════════════════════════════════
    TJ MAREK PORTFOLIO — MAIN JS
-   No cursor effect. Clean utility scripts only.
    ═══════════════════════════════════════════════ */
-
 (function () {
   'use strict';
 
-  /* ── 1. HEADER SCROLL STATE ─────────────────── */
+  /* ── 1. HEADER SCROLL ───────────────────────── */
   const header = document.querySelector('.site-header');
   if (header) {
-    const onScroll = () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    };
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
 
-  /* ── 2. MOBILE NAV TOGGLE ───────────────────── */
+  /* ── 2. MOBILE NAV ──────────────────────────── */
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav   = document.querySelector('.main-nav');
-
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-
-    // Close on nav link click
     mainNav.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('open');
@@ -35,8 +28,6 @@
         document.body.style.overflow = '';
       });
     });
-
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (mainNav.classList.contains('open') &&
           !mainNav.contains(e.target) &&
@@ -46,8 +37,6 @@
         document.body.style.overflow = '';
       }
     });
-
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mainNav.classList.contains('open')) {
         mainNav.classList.remove('open');
@@ -58,17 +47,25 @@
   }
 
   /* ── 3. COUNTER ANIMATION ───────────────────── */
+  // Pre-sets final value immediately to lock layout,
+  // then counts up visually without changing element dimensions.
   function animateCounter(el) {
     const target   = parseFloat(el.dataset.target);
     const suffix   = el.dataset.suffix   || '';
     const decimals = parseInt(el.dataset.decimals || '0', 10);
-    const duration = 1800;
-    const start    = performance.now();
+    const duration = 1600;
 
+    // CRITICAL: set min-width to current rendered width BEFORE animation
+    // This is what prevents the image from jumping during count-up.
+    const currentW = el.getBoundingClientRect().width;
+    el.style.minWidth = currentW + 'px';
+    el.style.display  = 'inline-block';
+    el.style.textAlign = 'center';
+
+    const start = performance.now();
     function update(now) {
       const elapsed  = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased    = 1 - Math.pow(1 - progress, 3);
       const current  = target * eased;
       el.textContent = current.toFixed(decimals) + suffix;
@@ -77,86 +74,79 @@
     requestAnimationFrame(update);
   }
 
-  // Observe all counter elements
-  const counterEls = document.querySelectorAll(
-    '[data-target].stat-card__number, [data-target].mini-stat-value'
-  );
-
+  const counterEls = document.querySelectorAll('[data-target]');
   if (counterEls.length) {
-    const counterObserver = new IntersectionObserver((entries) => {
+    const counterObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
+          counterObs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.5 });
-
-    counterEls.forEach(el => counterObserver.observe(el));
+    counterEls.forEach(el => counterObs.observe(el));
   }
 
   /* ── 4. AOS (Animate on Scroll) ─────────────── */
   const aosEls = document.querySelectorAll('[data-aos]');
   if (aosEls.length) {
-    const aosObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+    const aosObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger siblings slightly
-          const delay = (entry.target.dataset.aosDelay ||
-            Array.from(aosEls).indexOf(entry.target) % 4 * 80);
-          setTimeout(() => {
-            entry.target.classList.add('aos-animate');
-          }, delay);
-          aosObserver.unobserve(entry.target);
+          const delay = parseInt(entry.target.dataset.aosDelay || '0', 10);
+          setTimeout(() => entry.target.classList.add('aos-animate'), delay);
+          aosObs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12 });
-
-    aosEls.forEach(el => aosObserver.observe(el));
+    aosEls.forEach(el => aosObs.observe(el));
   }
 
   /* ── 5. SKILL BAR ANIMATION ─────────────────── */
   const skillFills = document.querySelectorAll('.skill-bar__fill');
   if (skillFills.length) {
-    const skillObserver = new IntersectionObserver((entries) => {
+    const skillObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animated');
-          skillObserver.unobserve(entry.target);
+          skillObs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.3 });
-
-    skillFills.forEach(el => skillObserver.observe(el));
+    skillFills.forEach(el => skillObs.observe(el));
   }
 
-  /* ── 6. CASE STUDY FILTER TABS ───────────────── */
+  /* ── 6. IMPACT BAR CHART ANIMATION ──────────── */
+  const ibarFills = document.querySelectorAll('.ibar__fill');
+  if (ibarFills.length) {
+    const ibarObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          ibarObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    ibarFills.forEach(el => ibarObs.observe(el));
+  }
+
+  /* ── 7. CASE STUDY FILTER ────────────────────── */
   const filterTabs = document.querySelectorAll('.filter-tab');
   const csCards    = document.querySelectorAll('.cs-card[data-category]');
-
   if (filterTabs.length && csCards.length) {
     filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        filterTabs.forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
+        filterTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
         const filter = tab.dataset.filter;
         csCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
+          card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
         });
       });
     });
   }
 
-  /* ── 7. CONTACT FORM SUBMIT ──────────────────── */
+  /* ── 8. CONTACT FORM ─────────────────────────── */
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -166,27 +156,18 @@
       const original = btn.textContent;
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      // Swap in your real form handler / endpoint here
       setTimeout(() => {
         btn.textContent = '✓ Message Sent!';
         contactForm.reset();
-        setTimeout(() => {
-          btn.textContent = original;
-          btn.disabled = false;
-        }, 3000);
+        setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3000);
       }, 1200);
     });
   }
 
-  /* ── 8. ACTIVE NAV LINK ──────────────────────── */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  /* ── 9. ACTIVE NAV LINK ──────────────────────── */
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+    link.classList.toggle('active', link.getAttribute('href') === currentPage);
   });
 
 })();
